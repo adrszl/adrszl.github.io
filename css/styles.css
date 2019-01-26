@@ -1,0 +1,358 @@
+* {
+  margin: 0 !important;
+}
+
+hr {
+  width: 30%;
+  margin: auto !important;
+}
+
+label {
+  margin-bottom: .5rem !important;
+  margin-top: .5rem !important;
+}
+
+footer {
+  padding: 20px;
+  background: #22313F;
+  color: white;
+  line-height: 40px;
+  margin-top: 50px !important;
+}
+
+textarea {
+  resize: vertical !important;
+}
+
+.form-group {
+  margin-bottom: 1rem !important;
+}
+
+.form-control {
+  height: calc(2.25rem + 2px) !important;
+}
+
+.navbar.transparent {
+  background-color: transparent !important;
+  border: none;
+  color: white;
+  z-index: 100;
+  transition: background-color 1s ease 0s;
+}
+
+.navbar {
+  transition: background-color 1s ease 0s;
+}
+
+#welcome-section {
+  background: linear-gradient(to bottom, #cedce7 11%,#596a72 79%,#596a72 79%,#596a72 100%);
+  min-height: 100vh !important;
+  padding-top: 45vh;
+  margin: 0;
+}
+
+#welcome-section #name {
+  font-size: 4.5rem !important;
+}
+
+#welcome-section p {
+  font-size: 1.2rem;
+  padding: 7px;
+}
+
+#project-section {
+  /* background: linear-gradient(to bottom, #cedce7 57%,#cedce7 57%,#596a72 100%);  podejście pierwsze*/
+  background: linear-gradient(to bottom, #596a72 0%,#cedce7 65%);
+  min-height: 100vh !important;
+  margin: 0;
+}
+
+#covering {
+  background: hsla(360, 100%, 100%, 0.7);
+  min-height: 85vh !important;
+}
+
+#projectsTitle {
+  padding-top: 28px;
+}
+
+#secondParagraph {
+  margin-bottom: 2rem !important;
+}
+
+#tributePageTitle {
+  font-size: 1.7rem;
+}
+
+#technicalDocumentationPageTitle {
+  font-size: 1.9rem;
+}
+
+#about-section {
+  background: linear-gradient(to bottom, #596a72 0%,#cedce7 65%);
+  min-height: 100vh !important;
+  margin: 0;
+}
+
+#contact-section {
+  /* position: relative; */
+  touch-action:none;
+  background: linear-gradient(to bottom, #596a72 0%,#cedce7 65%);
+  min-height: 100vh !important;
+  margin: 0;
+}
+
+#aboutTitle {
+  padding-top: 28px;
+}
+
+#contactTitle {
+  padding-top: 28px;
+}
+
+#smallProject1Img {
+  display: none !important;
+}
+
+#smallProject2Img {
+  display: none !important;
+}
+
+#smallProject3Img {
+  display: none !important;
+}
+
+#smallProject4Img {
+  display: none !important;
+}
+
+#smallProject5Img {
+  display: none !important;
+}
+
+#texture {
+  display: block;
+  /* margin-left: auto !important;
+  margin-right: auto !important; */
+  visibility: hidden;
+}
+
+#canvas {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 500px;
+  height: 340px;
+  margin-left:-250px !important;
+  margin-top: 0px !important;
+  cursor: pointer;
+  box-shadow: 0px 0px 80px #000;
+  border-radius: 10px;
+}
+
+#water {
+  /* touch-action:none; */
+  height: 660px;
+  position: relative;
+  margin-top: -260px !important
+}
+
+#authorsPhoto {
+  box-shadow: 0px 0px 80px #000;
+  border-radius: 10px;
+  display: block;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 50px !important;
+  margin-bottom: 50px !important;
+}
+
+#photoSource {
+  margin-top: 10px !important;
+}
+
+#contactForm {
+  background-color: #fff;
+  max-width: 900px;
+  border-radius: 9px;
+  margin: 0 auto !important;
+  padding: 10px;
+}
+
+#message {
+  height: 200px !important;
+  resize: none !important;
+}
+
+.carousel {
+  background: #b1bccc;
+}
+
+.carousel-item {
+  height: 600px;
+}
+
+.carousel-item img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-height: 300px;
+}
+
+.carousel-text {
+  color: black;
+}
+
+.nav-link:hover {
+  color: #3281ff !important;
+  border: 1px solid #3281ff;
+  border-radius: 9px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  padding-right: .4rem !important;
+  padding-left: .5rem !important;
+}
+
+.row {
+  padding: 20px;
+}
+
+.card {
+  margin-right: 10px !important;
+  margin-bottom: 10px !important;
+}
+
+.card-link {
+  padding-bottom: 0px;
+  margin-top: auto !important;
+}
+
+.offset-xl-2 {
+  margin-left: 16.666667% !important;
+}
+
+.offset-lg-2 {
+
+}
+
+.offset-md-2 {
+
+}
+
+.offset-sm-3 {
+
+}
+
+.offset-3 {
+  margin-left: 25% !important;
+}
+
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+  .carousel-item {
+    height: 450px;
+  }
+  .carousel {
+    background: transparent;
+  }
+  .carousel-text {
+    font-size: 1.7rem;
+  }
+  #tributePageTitle {
+    font-size: 1.4rem;
+  }
+  #technicalDocumentationPageTitle {
+    font-size: 1.4rem;
+  }
+  .offset-xl-2 {
+    margin-left: 0 !important;
+  }
+  .offset-lg-2 {
+    margin-left: 12% !important;
+  }
+}
+
+@media screen and (max-width: 991px) and (min-width: 767px) {
+  .offset-lg-2 {
+
+  }
+  .offset-md-2 {
+    margin-left: 16.666667% !important;
+  }
+  .offset-ex-md-2 {
+    margin-left: 30% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .carousel-item {
+    height: 400px;
+  }
+  .d-none {
+    display: inline !important;
+  }
+  .carousel-text {
+    font-size: 1rem;
+  }
+  /* Zmienić pod spodem, że osobno pod takie ekrany i osobno pod telefony, czyli jeszcze mniejsze ekrany, ale tylko jak to przemyślę */
+  .offset-sm-2 {
+    margin-left: 7% !important;
+  }
+  /* ------------------------------------------------------------------------------------------------------------------------------- */
+  .offset-lg-2 {
+
+  }
+  .offset-md-2 {
+
+  }
+  .offset-xl-2 {
+
+  }
+  #tributePageTitle {
+    font-size: 0.9rem;
+  }
+  #technicalDocumentationPageTitle {
+    font-size: 0.9rem;
+  }
+  #project1Img {
+    display: none !important;
+  }
+  #project2Img {
+    display: none !important;
+  }
+  #project3Img {
+    display: none !important;
+  }
+  #project4Img {
+    display: none !important;
+  }
+  #project5Img {
+    display: none !important;
+  }
+  #smallProject1Img {
+    display: block !important;
+  }
+  #smallProject2Img {
+    display: block !important;
+  }
+  #smallProject3Img {
+    display: block !important;
+  }
+  #smallProject4Img {
+    display: block !important;
+  }
+  #smallProject5Img {
+    display: block !important;
+  }
+  #water {
+    display: none;
+  }
+  #photoSource {
+    display: none;
+  }
+  #contact-section {
+    touch-action: auto;
+  }
+  #message {
+    height: 100px !important;
+  }
+}
