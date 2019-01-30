@@ -3,6 +3,7 @@
 ## Co dodać:
 - ~~dodać zdjęcie miniaturkę strony, że jak np. udostępniam link na FB to jest w podglądzie moje zdjęcie~~
 - dodać resztę ustawień z FB Debugger jak np. opis
+- walidacja formularza i wyświetlanie odpowiednich błędów. Usunąć lub zmienić kod z dołu strony, co sprawdzał czy są błędy po URL
 - połączyć z Google Search Console
 - obsługa języka Polskiego
 - do karuzeli projektów dodać resztę projektów, np. projekty PHP. Kiedy są to projekty, których nie mogę wrzucić np. na codepen.io to udostępnić zdjęcia i wrzucić kod tych projektów do repo PublicProjects. Wszystkie te projekty powinny dobrze wyświetlać się na telefonie.
