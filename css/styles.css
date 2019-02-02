@@ -130,6 +130,18 @@ textarea {
   display: none !important;
 }
 
+#smallProject6Img {
+  display: none !important;
+}
+
+#smallProject7Img {
+  display: none !important;
+}
+
+#smallProject8Img {
+  display: none !important;
+}
+
 #texture {
   display: block;
   /* margin-left: auto !important;
@@ -328,6 +340,15 @@ textarea {
   #project5Img {
     display: none !important;
   }
+  #project6Img {
+    display: none !important;
+  }
+  #project7Img {
+    display: none !important;
+  }
+  #project8Img {
+    display: none !important;
+  }
   #smallProject1Img {
     display: block !important;
   }
@@ -341,6 +362,15 @@ textarea {
     display: block !important;
   }
   #smallProject5Img {
+    display: block !important;
+  }
+  #smallProject6Img {
+    display: block !important;
+  }
+  #smallProject7Img {
+    display: block !important;
+  }
+  #smallProject8Img {
     display: block !important;
   }
   #water {
