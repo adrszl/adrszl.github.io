@@ -142,6 +142,10 @@ textarea {
   display: none !important;
 }
 
+#smallProject9Img {
+  display: none !important;
+}
+
 #texture {
   display: block;
   /* margin-left: auto !important;
@@ -349,6 +353,9 @@ textarea {
   #project8Img {
     display: none !important;
   }
+  #project9Img {
+    display: none !important;
+  }
   #smallProject1Img {
     display: block !important;
   }
@@ -371,6 +378,9 @@ textarea {
     display: block !important;
   }
   #smallProject8Img {
+    display: block !important;
+  }
+  #smallProject9Img {
     display: block !important;
   }
   #water {
