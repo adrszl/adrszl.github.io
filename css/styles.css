@@ -170,7 +170,7 @@ textarea {
   /* touch-action:none; */
   height: 100px;
   position: relative;
-  margin-top: -260px !important
+  /* margin-top: -260px !important */
 }
 
 #authorsPhoto {
