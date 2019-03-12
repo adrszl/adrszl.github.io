@@ -168,7 +168,7 @@ textarea {
 
 #water {
   /* touch-action:none; */
-  height: 660px;
+  height: 100px;
   position: relative;
   margin-top: -260px !important
 }
@@ -179,7 +179,7 @@ textarea {
   display: block;
   margin-left: auto !important;
   margin-right: auto !important;
-  margin-top: 50px !important;
+  margin-top: 300px !important;
   margin-bottom: 50px !important;
 }
 
@@ -309,11 +309,9 @@ textarea {
   .carousel-text {
     font-size: 1rem;
   }
-  /* Zmienić pod spodem, że osobno pod takie ekrany i osobno pod telefony, czyli jeszcze mniejsze ekrany, ale tylko jak to przemyślę */
   .offset-sm-2 {
     margin-left: 7% !important;
   }
-  /* ------------------------------------------------------------------------------------------------------------------------------- */
   .offset-lg-2 {
 
   }
@@ -394,5 +392,8 @@ textarea {
   }
   #message {
     height: 100px !important;
+  }
+  #authorsPhoto {
+    margin-top: 50px !important;
   }
 }
