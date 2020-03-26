@@ -157,8 +157,10 @@ if (window.Worker && window.OffscreenCanvas && typeof imgData !== "undefined") {
     offscreen
   ]);
 } else {
-  worker = water(true);
-  worker.postMessage({ msg: "start", elem: canvas, imgData: imgData });
+  if(typeof imgData !== "undefined") {
+    worker = water(true);
+    worker.postMessage({ msg: "start", elem: canvas, imgData: imgData });
+  }
 }
 
 const pointer = {
