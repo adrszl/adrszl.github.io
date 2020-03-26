@@ -177,10 +177,8 @@ const pointer = {
   move(e) {
     if (e.targetTouches) {
       e.preventDefault();
-      if(event.defaultPrevented) {
         this.x = e.targetTouches[0].clientX;
         this.y = e.targetTouches[0].clientY;
-      }
     } else {
       this.x = e.clientX;
       this.y = e.clientY;
