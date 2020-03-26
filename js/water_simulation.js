@@ -11,7 +11,7 @@ window.mobilecheck = function() {
   return mobile;
 };
 
-if(!mobile) {
+if(!window.mobilecheck()) {
 
 const water = noWorkers => {
   "use strict";
