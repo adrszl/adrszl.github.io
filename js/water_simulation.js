@@ -150,7 +150,7 @@ if(canvas.width !== 0 && canvas.height !== 0) {
   const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 }
 
-if (window.Worker && window.OffscreenCanvas) {
+if (window.Worker && window.OffscreenCanvas && typeof imgData !== "undefined") {
   worker = createWorker(water);
   const offscreen = canvas.transferControlToOffscreen();
   worker.postMessage({ msg: "start", elem: offscreen, imgData: imgData }, [
