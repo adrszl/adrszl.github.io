@@ -154,9 +154,7 @@ texture.width = canvas.width;
 texture.height = canvas.height;
 const ctx = texture.getContext("2d");
 ctx.drawImage(img, 0, 0);
-if(canvas.width !== 0 && canvas.height !== 0) {
-  const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-}
+const imgData = ctx.getImageData(0, 0, canvas.width, canvas.height);
 
 if (window.Worker && window.OffscreenCanvas && typeof imgData !== "undefined") {
   worker = createWorker(water);
