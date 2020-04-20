@@ -241,6 +241,10 @@ textarea {
   margin-bottom: 10px !important;
 }
 
+.card-body {
+  background-color: #fff;
+}
+
 .card-link {
   padding-bottom: 0px;
   margin-top: auto !important;
