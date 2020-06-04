@@ -250,6 +250,10 @@ textarea {
   margin-top: auto !important;
 }
 
+a.card-link {
+  color: ##007bff;
+}
+
 .offset-xl-2 {
   margin-left: 16.666667% !important;
 }
