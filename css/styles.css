@@ -156,6 +156,9 @@ textarea {
 #smallProject10Img {
   display: none !important;
 }
+#smallProject11Img {
+  display: none !important;
+}
 
 #texture {
   display: block;
@@ -376,6 +379,9 @@ a.card-link {
   #project10Img {
     display: none !important;
   }
+  #project11Img {
+    display: none !important;
+  }
   #smallProject1Img {
     display: block !important;
   }
@@ -404,6 +410,9 @@ a.card-link {
     display: block !important;
   }
   #smallProject10Img {
+    display: block !important;
+  }
+  #smallProject11Img {
     display: block !important;
   }
   #water {
