@@ -1,5 +1,5 @@
 * {
-  margin: 0 !important;
+  margin: 0;
 }
 
 h3.card-title {
@@ -250,9 +250,15 @@ textarea {
   padding: 20px;
 }
 
+.row.certifications {
+  max-width: 1330px;
+  margin: 0 auto;
+  justify-content: center;
+}
+
 .card {
-  margin-right: 10px !important;
-  margin-bottom: 10px !important;
+  width: 20%; 
+  margin: 2rem 1rem;
 }
 
 .card-body {
@@ -325,6 +331,9 @@ a.card-link {
 }
 
 @media screen and (max-width: 767px) {
+  .card {
+    width: 100%;
+  }
   .carousel-item {
     height: 400px;
   }
