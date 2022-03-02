@@ -15,6 +15,8 @@
 - grid classes
 
 ### Adrian Szlegel - commercial and non-commercial projects
+- personal website for Mr. Arkadiusz Trajdos [LINK](https://arkadiusztrajdos.pl/)
+    > technology stack: HTML, CSS, JS, PHP, Wordpress
 
 ### Adrian Szlegel - courses and certifications
 
