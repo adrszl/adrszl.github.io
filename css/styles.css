@@ -162,6 +162,9 @@ textarea {
 #smallProject12Img {
   display: none !important;
 }
+#smallProject13Img {
+  display: none !important;
+}
 
 #texture {
   display: block;
@@ -294,6 +297,11 @@ a.card-link {
   margin-left: 25% !important;
 }
 
+.carousel-caption {
+  left: 0% !important;
+  right: 0% !important;
+}
+
 @media screen and (max-width: 1199px) and (min-width: 992px) {
   .carousel-item {
     height: 450px;
@@ -397,6 +405,9 @@ a.card-link {
   #project12Img {
     display: none !important;
   }
+  #project13Img {
+    display: none !important;
+  }
   #smallProject1Img {
     display: block !important;
   }
@@ -431,6 +442,9 @@ a.card-link {
     display: block !important;
   }
   #smallProject12Img {
+    display: block !important;
+  }
+  #smallProject13Img {
     display: block !important;
   }
   #water {
