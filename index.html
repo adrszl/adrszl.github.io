@@ -648,7 +648,7 @@
     <!-- Featured media section end -->
     <!-- Contact form -->
     <div id = "contactForm">
-      <form action="https://app.99inbound.com/api/e/ZcuIhPX9" method="POST" target="_blank">
+      <form id="contactForm-form" action="https://app.99inbound.com/api/e/ZcuIhPX9" method="POST" target="_blank">
         <h2 class = "text-center">Contact me:</h2>
         <p id="errorHandler" class = "text-center" style="color: red"></p>
         <div class="form-group">
@@ -662,7 +662,15 @@
           <textarea name="messageContent" class="form-control" id="message" rows="3" required></textarea>
         </div>
         <div class = "text-center">
-          <button type="submit" class="btn btn-secondary"  aria-pressed="false">Submit</button>
+          <button 
+                  type="submit"
+                  class="btn btn-secondary g-recaptcha"
+                  data-sitekey="6Lc4CwkfAAAAAEmZTfxb4gS6udVNHbZYk4XjQPWh"
+                  data-callback='onSubmit'
+                  data-action='submit'
+                  aria-pressed="false">
+            Submit
+          </button>
         </div>
         <div style="position: absolute; left: -5000px;">
           <input aria-label="Check me" type="checkbox" name="grandpas_salmon_spotted_lake" value="1" tabindex="-1">
@@ -674,10 +682,16 @@
   </div>
 
   <!-- Dependency scripts -->
+  <script src="https://www.google.com/recaptcha/api.js"></script>
   <script src="node_modules/jquery/dist/jquery.slim.min.js"></script>
   <script src="node_modules/popper.js/dist/umd/popper.min.js"></script>
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
   <script src="./js/water_simulation.js"></script>
+   <script>
+   function onSubmit(token) {
+     document.getElementById("contactForm-form").submit();
+   }
+  </script>
   <script>
   $(document).ready(function() {
         // Transition effect for navbar
