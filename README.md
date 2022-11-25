@@ -17,6 +17,8 @@
 ### Adrian Szlegel - commercial and non-commercial projects
 - personal website for Mr. Arkadiusz Trajdos [LINK](https://arkadiusztrajdos.pl/)
     > technology stack: HTML, CSS, JS, PHP, Wordpress
+- e-commerce website for PC Belfast [LINK](https://www.pcbelfast.co.uk/)
+    > technology stack: HTML, CSS, JS, PHP, Wordpress, WooCommerce
 
 ### Adrian Szlegel - courses and certifications
 
