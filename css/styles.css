@@ -269,6 +269,8 @@ textarea {
 
 .card-body {
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
 }
 
 .card-link {
