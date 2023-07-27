@@ -153,19 +153,28 @@ textarea {
 #smallProject9Img {
   display: none !important;
 }
+
 #smallProject10Img {
   display: none !important;
 }
+
 #smallProject11Img {
   display: none !important;
 }
+
 #smallProject12Img {
   display: none !important;
 }
+
 #smallProject13Img {
   display: none !important;
 }
+
 #smallProject14Img {
+  display: none !important;
+}
+
+#smallProject15Img {
   display: none !important;
 }
 
@@ -449,7 +458,10 @@ a.card-link {
   #project13Img {
     display: none !important;
   }
-  #smallProject14Img {
+  #project14Img {
+    display: none !important;
+  }
+  #project15Img {
     display: none !important;
   }
   #smallProject1Img {
@@ -492,7 +504,10 @@ a.card-link {
     display: block !important;
   }
   #smallProject14Img {
-    display: none !important;
+    display: block !important;
+  }
+  #smallProject15Img {
+    display: block !important;
   }
   #water {
     display: none;
