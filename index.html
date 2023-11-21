@@ -853,31 +853,22 @@
       let allCryteriaMet = true;
 
       activeFiltersToApply.forEach(filter => {
-        console.log('filter: ', filter)
-        console.log('cardSkills: ', cardSkills)
-        console.log('cardSkills.toLowerCase().indexOf(filter): ', cardSkills.toLowerCase().indexOf(filter))
         if (cardSkills.toLowerCase().indexOf(filter) < 0) {
-          console.log('in the if')
           allCryteriaMet = false;
         }
       })
 
       if (allCryteriaMet) {
-        console.log('allCryteriaMet')
         $(this).show();
       } else {
-        console.log('else all cryteria')
         $(this).hide();
       }
-      // console.log('$(this): ', $(this).find('.card-text'));
-      // console.log('text: ', $(this).find('.card-text').text());
     })
   }
   
   $('#certificates-filter div span').each(function() {
     $(this).click(function() {
       const filterText = $(this).text().toLowerCase();
-      console.log('clicked filter: ', $(this).text())
       $(this).toggleClass('text-bg-light');
       $(this).toggleClass('text-bg-primary');
       if ($(this).hasClass('text-bg-primary')) {
@@ -888,7 +879,8 @@
       }
 
       checkIfContains(activeFilters);
-      console.log('activeFilters: ', activeFilters)
+
+      activeFilters.length ? $('.see-more-button').hide() : $('.see-more-button').show();
     })
   });
   </script>
