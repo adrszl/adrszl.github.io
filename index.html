@@ -297,8 +297,17 @@
       <div class="card">
         <div class="card-body">
           <h3 class="card-title">More to come...</h3>
-          <h4 class="card-subtitle mb-2 text-muted">2023</h4>
+          <h4 class="card-subtitle mb-2 text-muted">2024</h4>
           <p class="card-text">I'm working hard every day to improve my qualifications</p>
+        </div>
+      </div>
+       <!-- Certification card -->
+       <div class="card">
+        <div class="card-body">
+          <h3 class="card-title">Graphic Design Certification + Live Class</h3>
+          <h4 class="card-subtitle mb-2 text-muted">MAY 2024</h4>
+          <p class="card-text">Graphic design, digital marketing, other</p>
+          <a href="https://www.udemy.com/certificate/UC-d44c5617-ab55-4671-af00-b5cb17beeba2/" class="card-link" target="_blank">Show certificate</a>
         </div>
       </div>
       <!-- Certification card -->
@@ -797,7 +806,7 @@
       </form>
     </div>
     <!-- Contact form end -->
-    <footer class = "text-center">&copy; 2018 - 2023 Adrian Szlegel</footer>
+    <footer class = "text-center">&copy; 2018 - <span id="current-year"></span> Adrian Szlegel</footer>
   </div>
 
   <!-- Dependency scripts -->
@@ -883,6 +892,8 @@
       activeFilters.length ? $('.see-more-button').hide() : $('.see-more-button').show();
     })
   });
+
+  $('#current-year').text(new Date().getFullYear());
   </script>
   <!-- Dependency scripts end -->
 </body>
