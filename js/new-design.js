@@ -1,5 +1,6 @@
-// Portfolio data for carousel
+import { certificatesData } from './new-design-certifications.js';
 
+// Portfolio data for carousel
 const portfolioData = [
     {
         id: 1,
@@ -28,20 +29,20 @@ const portfolioData = [
 ];
 
 // Skills data
-const skillsData = [
-    { name: 'React.js', icon: '⚛️', level: 95, category: 'frontend' },
-    { name: 'Node.js', icon: '🟢', level: 90, category: 'backend' },
-    { name: 'TypeScript', icon: '📘', level: 88, category: 'frontend' },
-    { name: 'AWS', icon: '☁️', level: 92, category: 'cloud' },
-    { name: 'Docker', icon: '🐳', level: 85, category: 'cloud' },
-    { name: 'Python', icon: '🐍', level: 93, category: 'backend' },
-    { name: 'Kubernetes', icon: '☸️', level: 82, category: 'cloud' },
-    { name: 'GraphQL', icon: '◈', level: 87, category: 'backend' },
-    { name: 'TensorFlow', icon: '🤖', level: 78, category: 'emerging' },
-    { name: 'Blockchain', icon: '🔗', level: 75, category: 'emerging' },
-    { name: 'Vue.js', icon: '💚', level: 85, category: 'frontend' },
-    { name: 'MongoDB', icon: '🍃', level: 90, category: 'backend' }
-];
+// const skillsData = [
+//     { name: 'React.js', icon: '⚛️', level: 95, category: 'frontend' },
+//     { name: 'Node.js', icon: '🟢', level: 90, category: 'backend' },
+//     { name: 'TypeScript', icon: '📘', level: 88, category: 'frontend' },
+//     { name: 'AWS', icon: '☁️', level: 92, category: 'cloud' },
+//     { name: 'Docker', icon: '🐳', level: 85, category: 'cloud' },
+//     { name: 'Python', icon: '🐍', level: 93, category: 'backend' },
+//     { name: 'Kubernetes', icon: '☸️', level: 82, category: 'cloud' },
+//     { name: 'GraphQL', icon: '◈', level: 87, category: 'backend' },
+//     { name: 'TensorFlow', icon: '🤖', level: 78, category: 'emerging' },
+//     { name: 'Blockchain', icon: '🔗', level: 75, category: 'emerging' },
+//     { name: 'Vue.js', icon: '💚', level: 85, category: 'frontend' },
+//     { name: 'MongoDB', icon: '🍃', level: 90, category: 'backend' }
+// ];
 
 // Scroll to section function
 function scrollToSection(sectionId) {
@@ -254,31 +255,33 @@ function goToSlide(index) {
 function initSkillsGrid() {
     const skillsGrid = document.getElementById('skillsGrid');
     const categoryTabs = document.querySelectorAll('.category-tab');
+    const skillsData = certificatesData;
 
     function displaySkills(category = 'all') {
         skillsGrid.innerHTML = '';
 
         const filteredSkills = category === 'all'
             ? skillsData
-            : skillsData.filter(skill => skill.category === category);
+            : skillsData.filter(cert => {
+                const desc = cert.description.toLowerCase();
+                return desc.includes(category.toLowerCase());
+            });
 
-        filteredSkills.forEach((skill, index) => {
+        filteredSkills.forEach((cert, index) => {
             const hexagon = document.createElement('div');
             hexagon.className = 'skill-hexagon';
             hexagon.style.animationDelay = `${index * 0.1}s`;
 
+            // Możemy w skill użyć title jako nazwy, description jako poziomu (tu np. 100%), ikonę dać uniwersalną lub mapping
             hexagon.innerHTML = `
-                        <div class="hexagon-inner">
-                            <div class="hexagon-content">
-                                <div class="skill-icon-hex">${skill.icon}</div>
-                                <div class="skill-name-hex">${skill.name}</div>
-                                <div class="skill-level">
-                                    <div class="skill-level-fill" style="width: ${skill.level}%"></div>
-                                </div>
-                                <div class="skill-percentage-hex">${skill.level}%</div>
-                            </div>
-                        </div>
-                    `;
+                <div class="hexagon-inner">
+                    <div class="hexagon-content">
+                        <div class="skill-icon-hex">📜</div>
+                        <div class="skill-name-hex">${cert.title}</div>
+                        <div class="skill-percentage-hex">${cert.date}</div>
+                    </div>
+                </div>
+            `;
 
             skillsGrid.appendChild(hexagon);
         });
@@ -316,11 +319,6 @@ window.addEventListener('resize', () => {
         updateCarousel();
     }, 250);
 });
-
-// Initialize on load
-initCarousel();
-initSkillsGrid();
-initParticles();
 
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
@@ -449,17 +447,6 @@ contactForm.addEventListener('submit', (e) => {
     contactForm.reset();
 });
 
-// Loading screen
-window.addEventListener('load', () => {
-    setTimeout(() => {
-        const loader = document.getElementById('loader');
-        loader.classList.add('hidden');
-
-        insertCurrentYear();
-        toggleCertificationVisibility();
-    }, 1500);
-});
-
 // Add parallax effect to hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -485,7 +472,7 @@ function toggleCertificationVisibility() {
 
     certificates.forEach((item, index) => {
         if (index >= 9) {
-            item.classList.add('hidden');
+            item.classList.add('hidden', 'fade-out');
         }
     });
 
@@ -494,24 +481,129 @@ function toggleCertificationVisibility() {
 
         certificates.forEach((item, index) => {
             if (index >= 9) {
-
                 if (expanded) {
                     item.classList.remove('hidden');
-
                     requestAnimationFrame(() => {
-                        item.classList.remove('fade-out');
+                        requestAnimationFrame(() => {
+                            item.classList.remove('fade-out');
+                        });
                     });
 
                 } else {
+                    item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
                     item.classList.add('fade-out');
 
                     item.addEventListener('transitionend', () => {
                         item.classList.add('hidden');
+                        item.style.transition = '';
                     }, { once: true });
                 }
             }
         });
 
         showMoreButton.textContent = expanded ? 'Hide' : 'See more';
+
+        if (!expanded) {
+            const lastVisible = certificates[Math.min(8, certificates.length - 1)];
+            lastVisible.scrollIntoView({ behavior: 'smooth', block: 'end' });
+        }
     });
 }
+
+// function to calculate certificates
+function generateStatCards() {
+    const certificates = document.querySelectorAll('.certificate');
+    const totalCertificates = certificates.length;
+
+    const tabs = document.querySelectorAll('.category-tab');
+    const keywords = Array.from(tabs)
+        .map(tab => tab.dataset.category)
+        .filter(cat => cat !== 'all');
+
+    const mapping = {
+        javascript: { icon: '🟨', label: 'JavaScript' },
+        react: { icon: '⚛️', label: 'React' },
+        redux: { icon: '🌀', label: 'Redux' },
+        typescript: { icon: '🟦', label: 'TypeScript' },
+        jquery: { icon: '💧', label: 'jQuery' },
+        html: { icon: '📄', label: 'HTML' },
+        css: { icon: '🎨', label: 'CSS' },
+        flexbox: { icon: '📐', label: 'Flexbox' },
+        bootstrap: { icon: '🅱️', label: 'Bootstrap' },
+        sass: { icon: '💅', label: 'SASS' },
+        npm: { icon: '📦', label: 'NPM' },
+        webpack: { icon: '📦', label: 'Webpack' },
+        wordpress: { icon: '📝', label: 'WordPress' },
+        other: { icon: '✨', label: 'Other' }
+    };
+
+    const container = document.querySelector('#stats-grid');
+    container.innerHTML = '';
+
+    keywords.forEach(keyword => {
+        let count = 0;
+
+        certificates.forEach(cert => {
+            const description = cert.querySelector('.certificate-description')?.textContent || '';
+            if (description.toLowerCase().includes(keyword.toLowerCase())) {
+                count++;
+            }
+        });
+
+        const percentage = ((count / totalCertificates) * 100).toFixed(1);
+        const { icon, label } = mapping[keyword] || { icon: '❓', label: keyword };
+
+        const cardHTML = `
+            <div class="stat-card">
+                <div class="stat-icon">${icon}</div>
+                <div class="stat-number" data-target="${count}">0</div>
+                <div class="stat-label">${label}</div>
+                <p class="stat-description">${percentage}% of all certificates</p>
+            </div>
+        `;
+
+        container.insertAdjacentHTML('beforeend', cardHTML);
+    });
+}
+
+// function to generate all of the certificates
+function generateCertificates() {
+    const container = document.querySelector('#certifications');
+
+    container.insertAdjacentHTML(
+        'afterbegin',
+        certificatesData.map(cert => `
+        <div class="certificate">
+            <h3 class="certificate-title">${cert.title}</h3>
+            <h4>${cert.date}</h4>
+            <p class="certificate-description">
+                ${cert.description}
+            </p>
+            ${cert.link ? `
+                <a href="${cert.link}" 
+                   class="certificate-link" 
+                   target="_blank">
+                   Show certificate
+                </a>
+            ` : ''}
+        </div>
+    `).join('')
+    );
+}
+
+// Loading screen
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const loader = document.getElementById('loader');
+        loader.classList.add('hidden');
+
+        // Initialize on load
+        initCarousel();
+        initSkillsGrid();
+        initParticles();
+        generateCertificates();
+        insertCurrentYear();
+        generateStatCards();
+        toggleCertificationVisibility();
+    }, 1500);
+});

@@ -639,7 +639,7 @@ body::after {
     }
 }
 
-.philosophy-headline {
+.about-headline {
     font-size: 56px;
     font-weight: 900;
     text-transform: uppercase;
@@ -682,14 +682,16 @@ body::after {
     font-weight: 300;
 }
 
-.certifications {
+.certifications,
+.work-experience {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 50px;
     margin-bottom: 60px;
 }
 
-.certificate {
+.certificate,
+.experience {
     position: relative;
     padding: 40px 30px;
     background: linear-gradient(135deg,
@@ -704,15 +706,16 @@ body::after {
 }
 
 .certificate.fade-out {
-  opacity: 0;
-  transform: translateY(-10px);
+    opacity: 0;
+    transform: translateY(-10px);
 }
 
 .certificate.hidden {
-  display: none;
+    display: none;
 }
 
-.certificate::before {
+.certificate::before,
+.experience::before {
     content: '';
     position: absolute;
     top: 0;
@@ -727,11 +730,13 @@ body::after {
     transition: transform 0.4s ease;
 }
 
-.certificate:hover::before {
+.certificate:hover::before,
+.experience:hover::before {
     transform: scaleX(1);
 }
 
-.certificate:hover {
+.certificate:hover,
+.experience:hover {
     transform: translateY(-10px);
     border-color: var(--accent-purple);
     box-shadow: 0 20px 40px rgba(153, 69, 255, 0.2);
@@ -740,7 +745,8 @@ body::after {
             rgba(26, 26, 26, 0.3));
 }
 
-.certificate-icon {
+.certificate-icon,
+.experience-icon {
     width: 80px;
     height: 80px;
     margin: 0 auto 25px;
@@ -751,7 +757,8 @@ body::after {
     position: relative;
 }
 
-.certificate-icon::before {
+.certificate-icon::before,
+.experience-icon::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -776,7 +783,8 @@ body::after {
     }
 }
 
-.certificate-title {
+.certificate-title,
+.experience-title {
     font-size: 24px;
     font-weight: 700;
     text-transform: uppercase;
@@ -785,31 +793,39 @@ body::after {
     color: var(--text-primary);
 }
 
-.certificate h4 {
+.certificate h4,
+.experience h4 {
     margin-bottom: 15px;
 }
 
-.certificate-description {
+.certificate-description,
+.experience-description {
     font-size: 16px;
     color: var(--text-secondary);
     line-height: 1.6;
+    margin-bottom: 2rem;
 }
 
-.certificate-description a {
+.certificate-description a,
+.experience-description a {
     color: var(--accent-cyan);
     text-decoration: none;
     transition: all 0.3s ease;
     position: relative;
 }
 
-.certificate-link {
+.certificate-link,
+.experience-link {
     color: var(--accent-cyan);
     text-decoration: none;
     transition: all 0.3s ease;
-    margin-top: auto;
+    position: relative;
+    width: fit-content;
+    margin: auto auto 0 auto;
 }
 
-.certificate-description a::after {
+.certificate-link::after,
+.experience-link::after {
     content: '';
     position: absolute;
     bottom: -2px;
@@ -820,11 +836,35 @@ body::after {
     transition: width 0.3s ease;
 }
 
-.certificate-description a:hover {
+.certificate-link:hover,
+.experience-link:hover {
     color: var(--accent-purple);
 }
 
-.certificate-description a:hover::after {
+.certificate-link:hover::after,
+.experience-link:hover::after {
+    width: 100%;
+}
+
+.certificate-description a::after,
+.experience-description a::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--accent-cyan);
+    transition: width 0.3s ease;
+}
+
+.certificate-description a:hover,
+.experience-description a:hover {
+    color: var(--accent-purple);
+}
+
+.certificate-description a:hover::after,
+.experience-description a:hover::after {
     width: 100%;
 }
 
@@ -982,6 +1022,29 @@ body::after {
 .skills-container {
     max-width: 1200px;
     margin: 0 auto;
+}
+
+.platforms-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.platforms-container a {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 5px;
+    background-color: #fff;
+    width: 150px;
+    height: 150px;
+    margin: 0 .5rem 1.5rem .5rem;
+}
+
+.platforms-container a img {
+    max-width: 100%;
+    height: auto;
+    padding: .5rem;
 }
 
 .section-header {
@@ -1344,6 +1407,13 @@ a.info-item {
 
 .see-more-button {
     width: auto;
+    grid-column: 1 / -1;
+    justify-self: center;
+}
+
+.see-more-button:hover {
+    transform: scale(1.05);
+    background-color: #0056b3;
 }
 
 .submit-btn:hover {
@@ -1491,7 +1561,8 @@ a.info-item {
         font-size: 13px;
     }
 
-    .certifications {
+    .certifications,
+    .work-experience {
         grid-template-columns: 1fr;
     }
 
@@ -1535,6 +1606,10 @@ a.info-item {
 
     .nav-menu.active {
         left: 0;
+    }
+
+    .carousel-container {
+        overflow: hidden;
     }
 
     .carousel-item {
@@ -1603,7 +1678,7 @@ a.info-item {
         height: 10px;
     }
 
-    .philosophy-headline {
+    .about-headline {
         font-size: 36px;
     }
 
