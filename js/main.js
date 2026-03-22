@@ -1,4 +1,4 @@
-import { certificatesData } from './new-design-certifications.js';
+import { certificatesData } from './certifications.js';
 
 // Portfolio data for carousel
 const portfolioData = [
@@ -272,7 +272,6 @@ function initSkillsGrid() {
             hexagon.className = 'skill-hexagon';
             hexagon.style.animationDelay = `${index * 0.1}s`;
 
-            // Możemy w skill użyć title jako nazwy, description jako poziomu (tu np. 100%), ikonę dać uniwersalną lub mapping
             hexagon.innerHTML = `
                 <div class="hexagon-inner">
                     <div class="hexagon-content">
@@ -431,22 +430,6 @@ if (statsSection) {
     observer.observe(statsSection);
 }
 
-// Form submission
-const contactForm = document.getElementById('contactForm');
-contactForm.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    // Get form data
-    const formData = new FormData(contactForm);
-    const data = Object.fromEntries(formData);
-
-    // Show success message
-    alert(`Thank you ${data.name}! Your message has been transmitted successfully. We'll respond within 24 hours.`);
-
-    // Reset form
-    contactForm.reset();
-});
-
 // Add parallax effect to hero section
 window.addEventListener('scroll', () => {
     const scrolled = window.pageYOffset;
@@ -510,6 +493,55 @@ function toggleCertificationVisibility() {
     });
 }
 
+// function to animate count
+function animateCount(el, target, duration = 1200) {
+    let start = 0;
+    const startTime = performance.now();
+
+    function update(currentTime) {
+        const progress = Math.min((currentTime - startTime) / duration, 1);
+
+        const easeOut = 1 - Math.pow(1 - progress, 3);
+
+        const value = Math.floor(easeOut * target);
+        el.textContent = value;
+
+        if (progress < 1) {
+            requestAnimationFrame(update);
+        } else {
+            el.textContent = target;
+        }
+    }
+
+    requestAnimationFrame(update);
+}
+
+// observer for count effect
+function initCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+
+    counters.forEach(el => {
+        const target = parseInt(el.dataset.target, 10);
+
+        const rect = el.getBoundingClientRect();
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0;
+
+        if (isVisible) {
+            animateCount(el, target);
+            return;
+        }
+
+        const observer = new IntersectionObserver((entries, obs) => {
+            if (entries[0].isIntersecting) {
+                animateCount(el, target);
+                obs.disconnect();
+            }
+        }, { threshold: 0 });
+
+        observer.observe(el);
+    });
+}
+
 // function to calculate certificates
 function generateStatCards() {
     const certificates = document.querySelectorAll('.certificate');
@@ -537,8 +569,8 @@ function generateStatCards() {
         other: { icon: '✨', label: 'Other' }
     };
 
-    const container = document.querySelector('#stats-grid');
-    container.innerHTML = '';
+    const statsContainer = document.querySelector('#stats-grid');
+    statsContainer.innerHTML = '';
 
     keywords.forEach(keyword => {
         let count = 0;
@@ -562,8 +594,10 @@ function generateStatCards() {
             </div>
         `;
 
-        container.insertAdjacentHTML('beforeend', cardHTML);
+        statsContainer.insertAdjacentHTML('beforeend', cardHTML);
     });
+
+    requestAnimationFrame(initCounters);
 }
 
 // function to generate all of the certificates
