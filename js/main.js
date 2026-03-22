@@ -257,8 +257,10 @@ function initSkillsGrid() {
     const categoryTabs = document.querySelectorAll('.category-tab');
     const skillsData = certificatesData;
 
-    function displaySkills(category = 'all') {
+    function displaySkills(category = 'none') {
         skillsGrid.innerHTML = '';
+
+        if (category === 'none') return; // clear the grid if nothing is chosen
 
         const filteredSkills = category === 'all'
             ? skillsData
@@ -288,13 +290,20 @@ function initSkillsGrid() {
 
     categoryTabs.forEach(tab => {
         tab.addEventListener('click', () => {
-            categoryTabs.forEach(t => t.classList.remove('active'));
-            tab.classList.add('active');
-            displaySkills(tab.dataset.category);
+            // toggle tab
+            if (tab.classList.contains('active')) {
+                tab.classList.remove('active');
+                displaySkills('none'); // wyczyść grid
+            } else {
+                // remove active from other tabs
+                categoryTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                displaySkills(tab.dataset.category);
+            }
         });
     });
 
-    displaySkills();
+    displaySkills('none'); // na starcie grid jest pusty
 }
 
 // Event listeners
