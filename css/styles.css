@@ -1690,6 +1690,11 @@ a.info-item {
         grid-template-columns: 1fr;
     }
 
+    .category-tab {
+        font-size: 12px;
+        padding: 6px 15px;
+    }
+
     .skill-hexagon {
         width: 40%;
         margin: 20px 5px;
@@ -1727,5 +1732,9 @@ a.info-item {
     .footer-social {
         display: flex;
         justify-content: center;
+    }
+
+    .prism-shape {
+        text-align: justify;
     }
 }
