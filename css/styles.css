@@ -1608,7 +1608,17 @@ a.info-item {
         left: 0;
     }
 
-    .carousel-container {
+    .hero {
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .hero h1,
+    .hero h2 {
+        padding: 0 20px;
+    }
+
+    .carousel {
         overflow: hidden;
     }
 
