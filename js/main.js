@@ -331,11 +331,22 @@ function initSkillsGrid() {
 }
 
 // Event listeners
-document.getElementById('nextBtn').addEventListener('click', nextSlide);
-document.getElementById('prevBtn').addEventListener('click', prevSlide);
+document.getElementById('nextBtn').addEventListener('click', () => {
+    clearInterval(slideInterval);
+    nextSlide();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    clearInterval(slideInterval);
+    prevSlide();
+});
 
 // Auto-rotate carousel
-setInterval(nextSlide, 5000);
+let slideInterval;
+
+function startCarousel() {
+    slideInterval = setInterval(nextSlide, 5000);
+}
 
 // Keyboard navigation
 document.addEventListener('keydown', (e) => {
