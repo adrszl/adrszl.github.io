@@ -72,4 +72,28 @@ export const portfolioData = [
         tech: ['HTML', 'CSS'],
         projectLink: 'https://codepen.io/adrszl/full/EdjRPe/'
     },
+    {
+        id: 10,
+        title: 'Survey Form - 2018',
+        description: 'Sample implementation of survey of some kind with some author\'s stylization',
+        image: 'img/project3.png',
+        tech: ['HTML', 'CSS'],
+        projectLink: 'https://codepen.io/adrszl/full/KGpEKx/'
+    },
+    {
+        id: 11,
+        title: 'Product Landing Page - 2018',
+        description: 'Sample implementation of landing page for example for a product',
+        image: 'img/project4.png',
+        tech: ['HTML', 'CSS'],
+        projectLink: 'https://codepen.io/adrszl/full/YJqrPv/'
+    },
+    {
+        id: 12,
+        title: 'Technical Documentation Page - 2018',
+        description: 'Sample implementation of technical documentation page',
+        image: 'img/project5.png',
+        tech: ['HTML', 'CSS'],
+        projectLink: 'https://codepen.io/adrszl/full/EdjRPe/'
+    },
 ];
