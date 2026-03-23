@@ -50,6 +50,30 @@ const portfolioData = [
         tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress', 'WooCommerce'],
         projectLink: '404'
     },
+    {
+        id: 7,
+        title: 'Magna Polonia Webpage - 2018 -> now',
+        description: 'Website for Magna Polonia academic corporation',
+        image: 'img/project13.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: 'https://magnapolonia.pl/'
+    },
+    {
+        id: 8,
+        title: 'Personal Portfolio Webpage - 2018',
+        description: 'Simple page intended to be "Web business card"',
+        image: 'img/project1.png',
+        tech: ['HTML', 'CSS'],
+        projectLink: 'https://codepen.io/adrszl/full/WaXoWw'
+    },
+    {
+        id: 9,
+        title: 'Tribute Page (Simple Landing Page) - 2018',
+        description: 'Simple page intended to be landing page with static content',
+        image: 'img/project2.png',
+        tech: ['HTML', 'CSS'],
+        projectLink: 'https://codepen.io/adrszl/full/EdjRPe/'
+    },
 ];
 
 // Skills data
