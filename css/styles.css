@@ -593,6 +593,7 @@ body::after {
             var(--primary-black) 100%);
     position: relative;
     overflow: hidden;
+    border-radius: 15% 0 0;
 }
 
 .philosophy-container {
@@ -917,6 +918,8 @@ body::after {
             var(--carbon-dark) 50%,
             var(--primary-black) 100%);
     position: relative;
+    border-radius: 0 15% 0 0;
+    margin-top: 5rem;
 }
 
 .stats-grid {
@@ -1017,6 +1020,8 @@ body::after {
     background: var(--carbon-dark);
     position: relative;
     overflow: hidden;
+    margin-top: 5rem;
+    border-radius: 15% 0 0 0;
 }
 
 .skills-container {
