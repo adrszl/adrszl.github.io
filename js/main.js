@@ -354,6 +354,37 @@ document.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight') nextSlide();
 });
 
+// swiping navigation
+function initCarouselSwipe() {
+    const slider = document.getElementById('carousel');
+
+    let startX = 0;
+    let endX = 0;
+
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const diff = startX - endX;
+
+        if (Math.abs(diff) < 50) return;
+
+        clearInterval(slideInterval);
+
+        if (diff > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+    }
+}
+
 // Update carousel on window resize
 let resizeTimeout;
 window.addEventListener('resize', () => {
@@ -677,6 +708,8 @@ window.addEventListener('load', () => {
 
         // Initialize on load
         initCarousel();
+        startCarousel();
+        initCarouselSwipe();
         initSkillsGrid();
         initParticles();
         generateCertificates();
