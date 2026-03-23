@@ -26,6 +26,30 @@ const portfolioData = [
         tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
         projectLink: '404'
     },
+    {
+        id: 4,
+        title: 'Website - 2023',
+        description: 'Website built for Narimane and Karol, who were getting married',
+        image: 'img/project15.png',
+        tech: ['HTML', 'CSS', 'JS'],
+        projectLink: '404'
+    },
+    {
+        id: 5,
+        title: 'Website - 2023',
+        description: 'Website built for Compensum banking law office',
+        image: 'img/project14.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: '404'
+    },
+    {
+        id: 6,
+        title: 'E-Commerce Website - 2020',
+        description: 'E-commerce functionality for Mr. Arkadiusz Trajdos',
+        image: 'img/project12.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress', 'WooCommerce'],
+        projectLink: '404'
+    },
 ];
 
 // Skills data
