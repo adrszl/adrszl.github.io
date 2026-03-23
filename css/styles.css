@@ -1718,6 +1718,10 @@ a.info-item {
         overflow: hidden;
     }
 
+    .experience-icon img {
+        max-width: 100%;
+    }
+
     .footer-content {
         grid-template-columns: 1fr;
         text-align: center;
