@@ -384,7 +384,7 @@ body::after {
 .carousel-item {
     position: absolute;
     width: 400px;
-    height: 500px;
+    height: 525px;
     left: 50%;
     top: 50%;
     transform-style: preserve-3d;
@@ -584,7 +584,6 @@ body::after {
     transform: scale(1.3);
 }
 
-/* NEW: Prism Philosophy Section */
 .philosophy-section {
     padding: 120px 30px;
     background: linear-gradient(180deg,
@@ -1575,6 +1574,16 @@ a.info-item {
         grid-template-columns: 1fr;
     }
 
+    .carousel {
+        overflow: hidden;
+    }
+
+    .skills-section,
+    .stats-section,
+    .philosophy-section {
+        border-radius: 0;
+    }
+
     .footer-content {
         grid-template-columns: repeat(2, 1fr);
     }
@@ -1621,10 +1630,6 @@ a.info-item {
     .hero h1,
     .hero h2 {
         padding: 0 20px;
-    }
-
-    .carousel {
-        overflow: hidden;
     }
 
     .carousel-item {
