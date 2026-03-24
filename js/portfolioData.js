@@ -96,4 +96,36 @@ export const portfolioData = [
         tech: ['HTML', 'CSS'],
         projectLink: 'https://codepen.io/adrszl/full/EdjRPe/'
     },
+    {
+        id: 13,
+        title: 'Roman Numeral Converter - 2019',
+        description: 'Converter which converts number from decimal to roman and vice versa',
+        image: 'img/project6.png',
+        tech: ['JS'],
+        projectLink: 'https://codepen.io/adrszl/full/rPxRqB'
+    },
+    {
+        id: 14,
+        title: 'Palindrome Checker - 2019',
+        description: 'Checks if given phrase is a palindrome',
+        image: 'img/project7.png',
+        tech: ['JS'],
+        projectLink: 'https://codepen.io/adrszl/full/QYyYZM'
+    },
+    {
+        id: 15,
+        title: 'US Telephone Number Validator - 2019',
+        description: 'Validator checks if given number is valid US one',
+        image: 'img/project8.png',
+        tech: ['JS'],
+        projectLink: 'https://codepen.io/adrszl/full/JxXrWB'
+    },
+    {
+        id: 16,
+        title: 'Caesars Cipher - 2019',
+        description: 'Encrypts and decrypts given phrase with Caesars Cipher',
+        image: 'img/project9.png',
+        tech: ['JS'],
+        projectLink: 'https://codepen.io/adrszl/full/wNGqKE'
+    },
 ];
