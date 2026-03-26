@@ -58,6 +58,24 @@ let currentIndex = 0;
 const carousel = document.getElementById('carousel');
 const indicatorsContainer = document.getElementById('indicators');
 
+function initCarousel() {
+    // Create carousel items
+    portfolioData.forEach((data, index) => {
+        const item = createCarouselItem(data, index);
+        carousel.appendChild(item);
+
+        // Create indicator
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator';
+        if (index === 0) indicator.classList.add('active');
+        indicator.dataset.index = index;
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorsContainer.appendChild(indicator);
+    });
+
+    updateCarousel();
+}
+
 function createCarouselItem(data, index) {
     const item = document.createElement('div');
 
@@ -96,24 +114,6 @@ function createCarouselItem(data, index) {
     }
 
     return item;
-}
-
-function initCarousel() {
-    // Create carousel items
-    portfolioData.forEach((data, index) => {
-        const item = createCarouselItem(data, index);
-        carousel.appendChild(item);
-
-        // Create indicator
-        const indicator = document.createElement('div');
-        indicator.className = 'indicator';
-        if (index === 0) indicator.classList.add('active');
-        indicator.dataset.index = index;
-        indicator.addEventListener('click', () => goToSlide(index));
-        indicatorsContainer.appendChild(indicator);
-    });
-
-    updateCarousel();
 }
 
 function updateCarousel() {
@@ -216,6 +216,70 @@ function goToSlide(index) {
     updateCarousel();
 }
 
+// Event listeners
+document.getElementById('nextBtn').addEventListener('click', () => {
+    clearInterval(slideInterval);
+    nextSlide();
+});
+
+document.getElementById('prevBtn').addEventListener('click', () => {
+    clearInterval(slideInterval);
+    prevSlide();
+});
+
+// Auto-rotate carousel
+let slideInterval;
+
+function startCarousel() {
+    slideInterval = setInterval(nextSlide, 5000);
+}
+
+// Keyboard navigation
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') prevSlide();
+    if (e.key === 'ArrowRight') nextSlide();
+});
+
+// Update carousel on window resize
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        updateCarousel();
+    }, 250);
+});
+
+// swiping navigation
+function initCarouselSwipe() {
+    const slider = document.getElementById('carousel');
+
+    let startX = 0;
+    let endX = 0;
+
+    slider.addEventListener('touchstart', (e) => {
+        startX = e.touches[0].clientX;
+    });
+
+    slider.addEventListener('touchend', (e) => {
+        endX = e.changedTouches[0].clientX;
+        handleSwipe();
+    });
+
+    function handleSwipe() {
+        const diff = startX - endX;
+
+        if (Math.abs(diff) < 50) return;
+
+        clearInterval(slideInterval);
+
+        if (diff > 0) {
+            nextSlide();
+        } else {
+            prevSlide();
+        }
+    }
+}
+
 // Initialize hexagonal skills grid
 function initSkillsGrid() {
     const skillsGrid = document.getElementById('skillsGrid');
@@ -270,70 +334,6 @@ function initSkillsGrid() {
 
     displaySkills('none'); // na starcie grid jest pusty
 }
-
-// Event listeners
-document.getElementById('nextBtn').addEventListener('click', () => {
-    clearInterval(slideInterval);
-    nextSlide();
-});
-
-document.getElementById('prevBtn').addEventListener('click', () => {
-    clearInterval(slideInterval);
-    prevSlide();
-});
-
-// Auto-rotate carousel
-let slideInterval;
-
-function startCarousel() {
-    slideInterval = setInterval(nextSlide, 5000);
-}
-
-// Keyboard navigation
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'ArrowLeft') prevSlide();
-    if (e.key === 'ArrowRight') nextSlide();
-});
-
-// swiping navigation
-function initCarouselSwipe() {
-    const slider = document.getElementById('carousel');
-
-    let startX = 0;
-    let endX = 0;
-
-    slider.addEventListener('touchstart', (e) => {
-        startX = e.touches[0].clientX;
-    });
-
-    slider.addEventListener('touchend', (e) => {
-        endX = e.changedTouches[0].clientX;
-        handleSwipe();
-    });
-
-    function handleSwipe() {
-        const diff = startX - endX;
-
-        if (Math.abs(diff) < 50) return;
-
-        clearInterval(slideInterval);
-
-        if (diff > 0) {
-            nextSlide();
-        } else {
-            prevSlide();
-        }
-    }
-}
-
-// Update carousel on window resize
-let resizeTimeout;
-window.addEventListener('resize', () => {
-    clearTimeout(resizeTimeout);
-    resizeTimeout = setTimeout(() => {
-        updateCarousel();
-    }, 250);
-});
 
 // Mobile menu toggle
 const menuToggle = document.getElementById('menuToggle');
