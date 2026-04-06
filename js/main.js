@@ -20,7 +20,7 @@ function openProjectLink(link) {
     window.open(link);
 }
 
-// Initialize particles for philosophy section
+// Initialize particles for sections
 function initParticles() {
     const particlesContainers = document.querySelectorAll('.particles');
     const particleCount = 60;
