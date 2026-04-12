@@ -128,4 +128,52 @@ export const portfolioData = [
         tech: ['JS'],
         projectLink: 'https://codepen.io/adrszl/full/wNGqKE'
     },
+    {
+        id: 17,
+        title: 'Website - 2024',
+        description: 'Website for Univice',
+        image: 'img/project17.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: '404'
+    },
+    {
+        id: 18,
+        title: 'Website - 2023',
+        description: 'E-commerce website for Derby Hats',
+        image: 'img/project18.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress', 'WooCommerce'],
+        projectLink: '404'
+    },
+    {
+        id: 19,
+        title: 'Website - 2022',
+        description: 'Website for Our Words - world for RPG players',
+        image: 'img/project19.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: '404'
+    },
+    {
+        id: 20,
+        title: 'Website - 2022',
+        description: 'Website for Cobra Wrap Art',
+        image: 'img/project20.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: '404'
+    },
+    {
+        id: 21,
+        title: 'Website - 2022',
+        description: 'Website for IJE',
+        image: 'img/project21.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: '404'
+    },
+    {
+        id: 22,
+        title: 'Website - 2020',
+        description: 'Website for City Link',
+        image: 'img/project22.png',
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: 'https://city-link.pl/'
+    },
 ];
