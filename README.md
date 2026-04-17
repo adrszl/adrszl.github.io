@@ -1,10 +1,11 @@
 # Personal Portfolio Webpage
 
-## Dependencies:
-- Bootstrap:
+## Stack:
+<!-- - Bootstrap:
     - popper
-    - popper.js
-- jQuery
+    - popper.js -->
+<!-- - jQuery -->
+- JavaScript
 
 ### Classes and Bootstrap features used:
 - carousel with controls and indicators
@@ -25,3 +26,5 @@
 ### Adrian Szlegel - commercial experience
 
 ### Adrian Szlegel - where to find
+
+### Adrian Szlegel - CV
