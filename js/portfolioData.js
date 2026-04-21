@@ -176,4 +176,20 @@ export const portfolioData = [
         tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
         projectLink: 'https://city-link.pl/'
     },
+    {
+        id: 23,
+        title: 'Website - 2025',
+        description: 'Website for JarPol Construction Company',
+        image: project23,
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: 'https://jarpolconstruction.eu/'
+    },
+    {
+        id: 24,
+        title: 'Website - 2025',
+        description: 'Website for Kozi Studio, with audio player and videos slider',
+        image: project24,
+        tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
+        projectLink: 'https://kozistudio.co.uk/'
+    },
 ];
