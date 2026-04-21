@@ -180,7 +180,7 @@ export const portfolioData = [
         id: 23,
         title: 'Website - 2025',
         description: 'Website for JarPol Construction Company',
-        image: project23,
+        image: 'img/project23.png',
         tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
         projectLink: 'https://jarpolconstruction.eu/'
     },
@@ -188,7 +188,7 @@ export const portfolioData = [
         id: 24,
         title: 'Website - 2025',
         description: 'Website for Kozi Studio, with audio player and videos slider',
-        image: project24,
+        image: 'img/project24.png',
         tech: ['HTML', 'CSS', 'JS', 'PHP', 'Wordpress'],
         projectLink: 'https://kozistudio.co.uk/'
     },
