@@ -6,6 +6,7 @@
     - popper.js -->
 <!-- - jQuery -->
 - JavaScript
+- Storybook
 
 ### Classes and Bootstrap features used:
 - carousel with controls and indicators

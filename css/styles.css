@@ -1691,6 +1691,9 @@ a.info-item {
     .carousel-indicators {
         top: 20px;
         gap: 12px;
+        flex-wrap: wrap;
+        width: 90%;
+        justify-content: center;
     }
 
     .indicator {
