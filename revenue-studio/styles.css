@@ -5,7 +5,7 @@
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
 
 /* Upcoming product sections */
-.product--tool{margin-top:22px;margin-bottom:28px;grid-template-columns:1fr .85fr;min-height:390px;overflow:hidden;position:relative}
+.product--tool{grid-template-columns:1fr .85fr;min-height:390px;overflow:hidden;position:relative}
 .product--tool .tool-copy{position:relative;z-index:1}
 .product--tool .tool-copy h2{font-size:clamp(38px,4.2vw,54px);line-height:1.04;letter-spacing:-.055em;margin:17px 0}
 .product--tool .tool-points{list-style:none;padding:0;margin:22px 0 25px;display:grid;gap:10px;color:#b8aec5;font-size:12px}
