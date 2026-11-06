@@ -1,0 +1,1593 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Korepetycje — matematyka, informatyka, programowanie i angielski | Adrian Szlegel</title>
+    <meta name="description"
+        content="Indywidualne korepetycje z matematyki, informatyki, programowania i języka angielskiego. Praktyczne podejście, jasne tłumaczenie i ponad 10 lat doświadczenia w IT.">
+    <meta name="theme-color" content="#172B4D">
+
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Korepetycje — Adrian Szlegel">
+    <meta property="og:description" content="Zrozum materiał, rozwiń umiejętności i ucz się przez praktykę.">
+    <meta property="og:image" content="https://adrszl.github.io/img/profilowe1.jpg">
+    <meta property="og:url" content="https://adrszl.github.io/korepetycje/">
+
+    <link rel="icon" href="../img/favicon.ico" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        :root {
+            --navy: #172B4D;
+            --navy-deep: #10213D;
+            --blue: #4169D8;
+            --blue-dark: #3155BD;
+            --blue-soft: #EAF1FF;
+            --blue-pale: #F3F6FD;
+            --teal: #4F9A96;
+            --teal-soft: #E8F4F2;
+            --white: #FFFFFF;
+            --warm-white: #FAFBFE;
+            --text: #26354D;
+            --muted: #65738B;
+            --border: #E3E9F2;
+            --shadow: 0 20px 60px rgba(23, 43, 77, .09);
+            --radius: 22px;
+            --container: 1160px;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scroll-padding-top: 100px;
+        }
+
+        body {
+            margin: 0;
+            background: var(--warm-white);
+            color: var(--text);
+            font-family: "DM Sans", sans-serif;
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        body,
+        button,
+        a {
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        img {
+            display: block;
+            max-width: 100%;
+        }
+
+        button {
+            font: inherit;
+        }
+
+        .container {
+            width: min(var(--container), calc(100% - 48px));
+            margin-inline: auto;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            color: var(--blue);
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .13em;
+            text-transform: uppercase;
+        }
+
+        .eyebrow::before {
+            content: "";
+            width: 23px;
+            height: 2px;
+            background: var(--teal);
+            border-radius: 2px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4 {
+            margin-top: 0;
+            color: var(--navy);
+            font-family: "Manrope", sans-serif;
+            line-height: 1.2;
+        }
+
+        h1 {
+            margin-bottom: 24px;
+            font-size: clamp(2.65rem, 6vw, 5rem);
+            font-weight: 800;
+            letter-spacing: -.055em;
+        }
+
+        h2 {
+            margin-bottom: 18px;
+            font-size: clamp(2rem, 4vw, 3.15rem);
+            font-weight: 800;
+            letter-spacing: -.045em;
+        }
+
+        h3 {
+            margin-bottom: 12px;
+            font-size: 1.22rem;
+            font-weight: 800;
+            letter-spacing: -.02em;
+        }
+
+        p {
+            margin-top: 0;
+        }
+
+        .section {
+            padding: 112px 0;
+        }
+
+        .section-heading {
+            max-width: 690px;
+            margin-bottom: 52px;
+        }
+
+        .section-heading p {
+            max-width: 620px;
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: 1.08rem;
+        }
+
+        .button {
+            display: inline-flex;
+            min-height: 54px;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 0 25px;
+            border: 1px solid transparent;
+            border-radius: 12px;
+            background: var(--blue);
+            color: var(--white);
+            font-weight: 700;
+            transition: transform .2s ease, background .2s ease, box-shadow .2s ease;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+            background: var(--blue-dark);
+            box-shadow: 0 12px 26px rgba(65, 105, 216, .2);
+        }
+
+        .button-secondary {
+            border-color: var(--border);
+            background: var(--white);
+            color: var(--navy);
+        }
+
+        .button-secondary:hover {
+            border-color: #C8D5F0;
+            background: var(--blue-pale);
+            color: var(--navy);
+            box-shadow: none;
+        }
+
+        .text-link {
+            color: var(--blue);
+            font-weight: 700;
+            text-decoration: underline;
+            text-decoration-color: transparent;
+            text-underline-offset: 4px;
+            transition: text-decoration-color .2s ease;
+        }
+
+        .text-link:hover {
+            text-decoration-color: currentColor;
+        }
+
+        /* Navigation */
+
+        .site-header {
+            position: sticky;
+            z-index: 100;
+            top: 0;
+            border-bottom: 1px solid rgba(227, 233, 242, .8);
+            background: rgba(250, 251, 254, .9);
+            backdrop-filter: blur(18px);
+        }
+
+        .nav {
+            display: flex;
+            min-height: 78px;
+            align-items: center;
+            justify-content: space-between;
+            gap: 28px;
+        }
+
+        .brand {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            color: var(--navy);
+            font-family: "Manrope", sans-serif;
+            font-size: 1rem;
+            font-weight: 800;
+            letter-spacing: -.03em;
+        }
+
+        .brand-mark {
+            display: grid;
+            width: 38px;
+            height: 38px;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--blue-soft);
+            color: var(--blue);
+            font-size: 1.15rem;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--muted);
+            font-size: .9rem;
+            font-weight: 600;
+            transition: color .2s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--blue);
+        }
+
+        .nav-links .nav-cta {
+            padding: 11px 18px;
+            border-radius: 10px;
+            background: var(--blue);
+            color: var(--white);
+        }
+
+        .nav-links .nav-cta:hover {
+            background: var(--blue-dark);
+            color: var(--white);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid var(--border);
+            border-radius: 11px;
+            background: var(--white);
+            color: var(--navy);
+            cursor: pointer;
+        }
+
+        /* Hero */
+
+        .hero {
+            position: relative;
+            overflow: hidden;
+            padding: 100px 0 110px;
+            background:
+                radial-gradient(circle at 80% 20%, rgba(79, 154, 150, .12), transparent 27%),
+                radial-gradient(circle at 15% 90%, rgba(65, 105, 216, .10), transparent 30%),
+                var(--warm-white);
+        }
+
+        .hero::after {
+            position: absolute;
+            top: -170px;
+            right: -150px;
+            width: 500px;
+            height: 500px;
+            border: 1px solid rgba(65, 105, 216, .09);
+            border-radius: 50%;
+            content: "";
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1.2fr .8fr;
+            gap: 75px;
+        }
+
+        .hero-copy {
+            max-width: 700px;
+        }
+
+        .hero h1 span {
+            color: var(--blue);
+        }
+
+        .hero-lead {
+            max-width: 620px;
+            margin-bottom: 30px;
+            color: var(--muted);
+            font-size: clamp(1.08rem, 2vw, 1.25rem);
+            line-height: 1.8;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 13px;
+            margin-bottom: 36px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        .hero-tags span {
+            padding: 8px 13px;
+            border: 1px solid var(--border);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, .75);
+            color: var(--muted);
+            font-size: .82rem;
+            font-weight: 600;
+        }
+
+        .hero-portrait-wrap {
+            position: relative;
+            justify-self: end;
+            width: min(100%, 370px);
+        }
+
+        .portrait-backdrop {
+            position: absolute;
+            inset: 24px -18px -18px 24px;
+            border-radius: 30px;
+            background: var(--blue-soft);
+            transform: rotate(4deg);
+        }
+
+        .hero-portrait {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 4 / 5;
+            border: 8px solid var(--white);
+            border-radius: 28px;
+            background: #EAF1FF;
+            box-shadow: var(--shadow);
+        }
+
+        .hero-portrait img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .experience-note {
+            position: absolute;
+            right: -35px;
+            bottom: 35px;
+            max-width: 190px;
+            padding: 17px 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: var(--white);
+            box-shadow: var(--shadow);
+        }
+
+        .experience-note strong {
+            display: block;
+            color: var(--blue);
+            font-family: "Manrope", sans-serif;
+            font-size: 1.7rem;
+            line-height: 1.1;
+        }
+
+        .experience-note span {
+            display: block;
+            margin-top: 5px;
+            color: var(--muted);
+            font-size: .78rem;
+            line-height: 1.4;
+        }
+
+        /* Intro strip */
+
+        .intro-strip {
+            padding: 28px 0;
+            background: var(--navy);
+            color: var(--white);
+        }
+
+        .intro-strip-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .intro-strip p {
+            margin: 0;
+            color: rgba(255, 255, 255, .8);
+            font-size: .95rem;
+        }
+
+        .intro-strip strong {
+            color: var(--white);
+        }
+
+        .strip-points {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+            color: rgba(255, 255, 255, .88);
+            font-size: .85rem;
+            font-weight: 600;
+        }
+
+        .strip-points span::before {
+            margin-right: 8px;
+            color: #83C5BC;
+            content: "✓";
+        }
+
+        /* Offer */
+
+        .offer-section {
+            background: var(--white);
+        }
+
+        .offer-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 22px;
+        }
+
+        .offer-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 270px;
+            padding: 34px;
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            background: var(--warm-white);
+            transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+        }
+
+        .offer-card:hover {
+            transform: translateY(-5px);
+            border-color: #C9D7F5;
+            box-shadow: var(--shadow);
+        }
+
+        .offer-card-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 25px;
+        }
+
+        .offer-icon {
+            display: grid;
+            width: 52px;
+            height: 52px;
+            place-items: center;
+            border-radius: 16px;
+            background: var(--blue-soft);
+            color: var(--blue);
+            font-size: 1.45rem;
+        }
+
+        .offer-number {
+            color: #B6C3D8;
+            font-family: "Manrope", sans-serif;
+            font-size: .9rem;
+            font-weight: 800;
+        }
+
+        .offer-card p {
+            margin-bottom: 18px;
+            color: var(--muted);
+        }
+
+        .offer-card ul {
+            display: grid;
+            gap: 8px;
+            margin: 0;
+            padding: 0;
+            color: var(--text);
+            font-size: .92rem;
+            list-style: none;
+        }
+
+        .offer-card li::before {
+            margin-right: 9px;
+            color: var(--teal);
+            content: "✓";
+            font-weight: 800;
+        }
+
+        /* English */
+
+        .english-section {
+            background: var(--blue-pale);
+        }
+
+        .english-panel {
+            display: grid;
+            overflow: hidden;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid #DCE6FA;
+            border-radius: 28px;
+            background: var(--white);
+            box-shadow: 0 14px 45px rgba(23, 43, 77, .05);
+        }
+
+        .english-copy {
+            padding: 48px;
+        }
+
+        .english-copy p {
+            color: var(--muted);
+        }
+
+        .english-side {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+            padding: 48px;
+            background:
+                radial-gradient(circle at 100% 0, rgba(79, 154, 150, .2), transparent 45%),
+                var(--navy);
+            color: var(--white);
+        }
+
+        .english-side h3 {
+            color: var(--white);
+        }
+
+        .english-side p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, .72);
+        }
+
+        .english-pill {
+            display: inline-flex;
+            width: fit-content;
+            padding: 8px 13px;
+            border: 1px solid rgba(255, 255, 255, .2);
+            border-radius: 999px;
+            color: #BCE3DD;
+            font-size: .78rem;
+            font-weight: 700;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        /* About */
+
+        .about-grid {
+            display: grid;
+            align-items: center;
+            grid-template-columns: .85fr 1.15fr;
+            gap: 75px;
+        }
+
+        .about-visual {
+            position: relative;
+            min-height: 400px;
+            padding: 36px;
+            border-radius: 26px;
+            background: var(--blue-soft);
+        }
+
+        .about-visual::before,
+        .about-visual::after {
+            position: absolute;
+            border: 1px solid rgba(65, 105, 216, .2);
+            border-radius: 50%;
+            content: "";
+        }
+
+        .about-visual::before {
+            top: 35px;
+            right: 35px;
+            width: 115px;
+            height: 115px;
+        }
+
+        .about-visual::after {
+            right: 70px;
+            bottom: 45px;
+            width: 65px;
+            height: 65px;
+            border-color: rgba(79, 154, 150, .45);
+        }
+
+        .about-visual-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            height: 100%;
+            min-height: 325px;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .about-visual-label {
+            color: var(--blue);
+            font-size: .8rem;
+            font-weight: 800;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+        }
+
+        .about-visual-quote {
+            max-width: 300px;
+            color: var(--navy);
+            font-family: "Manrope", sans-serif;
+            font-size: 1.65rem;
+            font-weight: 800;
+            line-height: 1.4;
+            letter-spacing: -.035em;
+        }
+
+        .about-visual-caption {
+            color: var(--muted);
+            font-size: .88rem;
+        }
+
+        .about-copy p {
+            color: var(--muted);
+        }
+
+        .about-copy .about-lead {
+            color: var(--text);
+            font-size: 1.12rem;
+        }
+
+        .experience-facts {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 13px;
+            margin-top: 28px;
+        }
+
+        .fact {
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: var(--white);
+        }
+
+        .fact strong {
+            display: block;
+            margin-bottom: 5px;
+            color: var(--blue);
+            font-family: "Manrope", sans-serif;
+            font-size: 1.35rem;
+            font-weight: 800;
+        }
+
+        .fact span {
+            color: var(--muted);
+            font-size: .82rem;
+            line-height: 1.4;
+        }
+
+        /* Method */
+
+        .method-section {
+            background: var(--white);
+        }
+
+        .method-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .method-card {
+            padding: 25px 22px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--warm-white);
+        }
+
+        .method-step {
+            display: grid;
+            width: 38px;
+            height: 38px;
+            margin-bottom: 22px;
+            place-items: center;
+            border-radius: 12px;
+            background: var(--teal-soft);
+            color: #347D77;
+            font-family: "Manrope", sans-serif;
+            font-weight: 800;
+        }
+
+        .method-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: .91rem;
+        }
+
+        /* Audience */
+
+        .audience-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .audience-card {
+            padding: 28px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: var(--white);
+        }
+
+        .audience-card p {
+            margin-bottom: 0;
+            color: var(--muted);
+            font-size: .93rem;
+        }
+
+        .audience-card .audience-icon {
+            margin-bottom: 18px;
+            font-size: 1.6rem;
+        }
+
+        /* FAQ */
+
+        .faq-section {
+            background: var(--blue-pale);
+        }
+
+        .faq-list {
+            max-width: 850px;
+        }
+
+        .faq-item {
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 1px solid #DFE7F5;
+            border-radius: 15px;
+            background: var(--white);
+        }
+
+        .faq-item summary {
+            position: relative;
+            padding: 21px 58px 21px 23px;
+            color: var(--navy);
+            font-family: "Manrope", sans-serif;
+            font-size: .98rem;
+            font-weight: 700;
+            cursor: pointer;
+            list-style: none;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item summary::after {
+            position: absolute;
+            top: 50%;
+            right: 23px;
+            color: var(--blue);
+            content: "+";
+            font-size: 1.5rem;
+            font-weight: 500;
+            transform: translateY(-50%);
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-answer {
+            padding: 0 23px 22px;
+            color: var(--muted);
+            font-size: .94rem;
+        }
+
+        .faq-answer p {
+            margin-bottom: 0;
+        }
+
+        /* Contact */
+
+        .contact-section {
+            padding: 105px 0;
+            background:
+                radial-gradient(circle at 90% 0, rgba(79, 154, 150, .17), transparent 30%),
+                var(--navy);
+            color: var(--white);
+        }
+
+        .contact-grid {
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr auto;
+            gap: 45px;
+        }
+
+        .contact-section .eyebrow {
+            color: #AFC5FF;
+        }
+
+        .contact-section h2 {
+            max-width: 650px;
+            color: var(--white);
+        }
+
+        .contact-section p {
+            max-width: 620px;
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, .72);
+            font-size: 1.05rem;
+        }
+
+        .contact-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            min-width: 190px;
+        }
+
+        .contact-section .button-secondary {
+            border-color: rgba(255, 255, 255, .25);
+            background: transparent;
+            color: var(--white);
+        }
+
+        .contact-section .button-secondary:hover {
+            background: rgba(255, 255, 255, .08);
+        }
+
+        /* Footer */
+
+        .site-footer {
+            padding: 28px 0;
+            background: var(--navy-deep);
+            color: rgba(255, 255, 255, .65);
+            font-size: .85rem;
+        }
+
+        .footer-inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 22px;
+        }
+
+        .footer-links a {
+            color: rgba(255, 255, 255, .75);
+            transition: color .2s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--white);
+        }
+
+        /* Responsive */
+
+        @media (max-width: 950px) {
+            .hero-grid {
+                gap: 40px;
+            }
+
+            .experience-note {
+                right: -12px;
+            }
+
+            .about-grid {
+                gap: 40px;
+            }
+
+            .method-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 760px) {
+            .container {
+                width: min(100% - 36px, var(--container));
+            }
+
+            .section {
+                padding: 78px 0;
+            }
+
+            .menu-toggle {
+                display: inline-flex;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: calc(100% + 1px);
+                right: 0;
+                left: 0;
+                display: none;
+                align-items: stretch;
+                flex-direction: column;
+                gap: 0;
+                padding: 12px 22px 22px;
+                border-bottom: 1px solid var(--border);
+                background: var(--warm-white);
+            }
+
+            .nav-links.is-open {
+                display: flex;
+            }
+
+            .nav-links a {
+                display: block;
+                padding: 13px 4px;
+            }
+
+            .nav-links .nav-cta {
+                margin-top: 8px;
+                padding: 12px 16px;
+                text-align: center;
+            }
+
+            .hero {
+                padding: 70px 0 80px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+
+            .hero-portrait-wrap {
+                justify-self: center;
+                width: min(78%, 330px);
+            }
+
+            .experience-note {
+                right: -20px;
+            }
+
+            .intro-strip-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+
+            .offer-grid,
+            .english-panel,
+            .about-grid,
+            .audience-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .english-copy,
+            .english-side {
+                padding: 32px;
+            }
+
+            .about-visual {
+                min-height: 330px;
+            }
+
+            .about-visual-content {
+                min-height: 260px;
+            }
+
+            .contact-actions {
+                align-items: flex-start;
+            }
+
+            .contact-actions .button {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 2.55rem;
+            }
+
+            .hero-actions {
+                flex-direction: column;
+            }
+
+            .hero-actions .button {
+                width: 100%;
+            }
+
+            .offer-card {
+                padding: 25px;
+            }
+
+            .method-grid,
+            .experience-facts {
+                grid-template-columns: 1fr;
+            }
+
+            .method-card {
+                padding: 22px;
+            }
+
+            .footer-inner {
+                align-items: flex-start;
+                flex-direction: column;
+            }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                transition-duration: .01ms !important;
+                animation-duration: .01ms !important;
+                animation-iteration-count: 1 !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="site-header">
+        <nav class="nav container" aria-label="Nawigacja główna">
+            <a class="brand" href="#top" aria-label="Adrian Szlegel — początek strony">
+                <span class="brand-mark" aria-hidden="true">A.</span>
+                <span>Adrian Szlegel <span style="font-weight:500;color:#65738B;">/ Korepetycje</span></span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" type="button" aria-label="Otwórz menu" aria-expanded="false"
+                aria-controls="navLinks">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#oferta">Oferta</a></li>
+                <li><a href="#o-mnie">O mnie</a></li>
+                <li><a href="#metoda">Jak uczę</a></li>
+                <li><a href="#faq">FAQ</a></li>
+                <li><a class="nav-cta" href="#kontakt">Porozmawiajmy</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main id="top">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="container hero-grid">
+                <div class="hero-copy">
+                    <span class="eyebrow">Wiedza, praktyka, zrozumienie</span>
+
+                    <h1>
+                        Nauka, która zaczyna się od <span>zrozumienia.</span>
+                    </h1>
+
+                    <p class="hero-lead">
+                        Matematyka, informatyka, programowanie i język angielski.
+                        Pomagam uporządkować wiedzę, zrozumieć trudniejsze zagadnienia
+                        i rozwijać umiejętności krok po kroku — bez zbędnego komplikowania.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a class="button" href="#kontakt">Porozmawiajmy o nauce <span aria-hidden="true">→</span></a>
+                        <a class="button button-secondary" href="#oferta">Poznaj ofertę</a>
+                    </div>
+
+                    <div class="hero-tags" aria-label="Zakres zajęć">
+                        <span>Szkoła podstawowa</span>
+                        <span>Szkoła średnia</span>
+                        <span>Matura</span>
+                        <span>Zajęcia specjalistyczne</span>
+                    </div>
+                </div>
+
+                <div class="hero-portrait-wrap">
+                    <div class="portrait-backdrop" aria-hidden="true"></div>
+                    <div class="hero-portrait">
+                        <img src="../img/profilowe1.jpg" alt="Zdjęcie profilowe Adriana Szlegla" width="600"
+                            height="750">
+                    </div>
+                    <div class="experience-note">
+                        <strong>10+ lat</strong>
+                        <span>doświadczenia komercyjnego w branży IT</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- VALUE STRIP -->
+        <section class="intro-strip" aria-label="Podejście do nauki">
+            <div class="container intro-strip-inner">
+                <p><strong>Nie chodzi o zapamiętanie odpowiedzi.</strong> Chodzi o zrozumienie, skąd się biorą.</p>
+                <div class="strip-points">
+                    <span>Indywidualne tempo</span>
+                    <span>Praktyczne przykłady</span>
+                    <span>Samodzielne myślenie</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- OFFER -->
+        <section class="section offer-section" id="oferta">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Oferta</span>
+                    <h2>Wybierz obszar, w którym chcesz zrobić postęp.</h2>
+                    <p>
+                        Zajęcia mogą koncentrować się na bieżącym materiale szkolnym,
+                        przygotowaniu do egzaminów albo rozwijaniu konkretnych umiejętności.
+                        Zakres ustalamy w zależności od celu i potrzeb.
+                    </p>
+                </div>
+
+                <div class="offer-grid">
+                    <article class="offer-card">
+                        <div class="offer-card-top">
+                            <span class="offer-icon" aria-hidden="true">∑</span>
+                            <span class="offer-number">01 / MATEMATYKA</span>
+                        </div>
+                        <h3>Matematyka</h3>
+                        <p>
+                            Od uporządkowania podstaw po rozwiązywanie bardziej złożonych
+                            problemów i przygotowanie do egzaminów.
+                        </p>
+                        <ul>
+                            <li>Pomoc w bieżącym materiale</li>
+                            <li>Przygotowanie do sprawdzianów</li>
+                            <li>Powtórki i przygotowanie do matury</li>
+                            <li>Rozwiązywanie zadań krok po kroku</li>
+                        </ul>
+                    </article>
+
+                    <article class="offer-card">
+                        <div class="offer-card-top">
+                            <span class="offer-icon" aria-hidden="true">⌘</span>
+                            <span class="offer-number">02 / INFORMATYKA</span>
+                        </div>
+                        <h3>Informatyka</h3>
+                        <p>
+                            Nauka zagadnień informatycznych z naciskiem na zrozumienie
+                            mechanizmów, a nie tylko odtwarzanie schematów.
+                        </p>
+                        <ul>
+                            <li>Podstawy informatyki</li>
+                            <li>Algorytmika i logiczne myślenie</li>
+                            <li>Praca z zadaniami</li>
+                            <li>Przygotowanie do sprawdzianów i matury</li>
+                        </ul>
+                    </article>
+
+                    <article class="offer-card">
+                        <div class="offer-card-top">
+                            <span class="offer-icon" aria-hidden="true">{"</>"}</span>
+                            <span class="offer-number">03 / PROGRAMOWANIE</span>
+                        </div>
+                        <h3>Programowanie</h3>
+                        <p>
+                            Praktyczna nauka tworzenia oprogramowania — od podstaw
+                            i rozumienia kodu po rozwijanie własnych rozwiązań.
+                        </p>
+                        <ul>
+                            <li>HTML, CSS i JavaScript</li>
+                            <li>TypeScript i React</li>
+                            <li>Podstawy backendu i Node.js</li>
+                            <li>Analiza kodu i rozwiązywanie problemów</li>
+                        </ul>
+                    </article>
+
+                    <article class="offer-card">
+                        <div class="offer-card-top">
+                            <span class="offer-icon" aria-hidden="true">文</span>
+                            <span class="offer-number">04 / JĘZYK ANGIELSKI</span>
+                        </div>
+                        <h3>Język angielski</h3>
+                        <p>
+                            Praca nad swobodniejszym rozumieniem i używaniem języka
+                            w nauce, codziennej komunikacji oraz kontekście zawodowym.
+                        </p>
+                        <ul>
+                            <li>Utrwalanie gramatyki i słownictwa</li>
+                            <li>Rozumienie tekstu i komunikacja</li>
+                            <li>Angielski w kontekście IT</li>
+                            <li>Business English</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENGLISH CLASSES -->
+        <section class="section english-section" id="zajecia-angielskie">
+            <div class="container">
+                <div class="english-panel">
+                    <div class="english-copy">
+                        <span class="eyebrow">English-language sessions</span>
+                        <h2>Learn in English. Think beyond the textbook.</h2>
+                        <p>
+                            Wybrane zajęcia mogą być prowadzone w języku angielskim.
+                            To możliwość rozwijania wiedzy przedmiotowej i językowej
+                            jednocześnie — w praktycznym kontekście.
+                        </p>
+                        <p>
+                            Nie musisz ograniczać się do nauki słówek. Możemy pracować
+                            na przykładach, kodzie, problemach i sytuacjach, z którymi
+                            spotykasz się w praktyce.
+                        </p>
+                    </div>
+
+                    <div class="english-side">
+                        <span class="english-pill">Zajęcia po angielsku</span>
+
+                        <div>
+                            <h3>Computer Science & Programming</h3>
+                            <p>
+                                Informatyka i programowanie omawiane po angielsku,
+                                z naciskiem na terminologię i praktyczne rozumienie zagadnień.
+                            </p>
+                        </div>
+
+                        <div>
+                            <h3>Business English</h3>
+                            <p>
+                                Język angielski w środowisku zawodowym: komunikacja,
+                                słownictwo biznesowe i kontekst pracy w branży IT.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section" id="o-mnie">
+            <div class="container about-grid">
+                <div class="about-visual" aria-label="Podejście do nauczania">
+                    <div class="about-visual-content">
+                        <span class="about-visual-label">Podejście</span>
+                        <div class="about-visual-quote">
+                            Najpierw zrozumieć problem. Potem znaleźć rozwiązanie.
+                        </div>
+                        <span class="about-visual-caption">Wiedza ma sens wtedy, gdy potrafisz z niej korzystać.</span>
+                    </div>
+                </div>
+
+                <div class="about-copy">
+                    <span class="eyebrow">O mnie</span>
+                    <h2>Praktyka zawodowa, którą przekładam na zrozumiałą wiedzę.</h2>
+
+                    <p class="about-lead">
+                        Od ponad 10 lat pracuję komercyjnie w branży IT.
+                        Mam doświadczenie w tworzeniu aplikacji i rozwiązań
+                        obejmujących frontend, backend oraz pracę z istniejącym kodem.
+                    </p>
+
+                    <p>
+                        Na co dzień zajmuję się rozwiązywaniem problemów technicznych,
+                        analizą wymagań i przekładaniem złożonych zagadnień na konkretne
+                        rozwiązania. W pracy z uczniem wykorzystuję podobne podejście:
+                        rozbijam trudniejsze tematy na mniejsze części i pokazuję,
+                        jak łączą się ze sobą.
+                    </p>
+
+                    <p>
+                        Mam również 7 lat komercyjnego doświadczenia z WordPress
+                        i WooCommerce. To praktyczne zaplecze szczególnie przydatne
+                        podczas nauki tworzenia stron i aplikacji internetowych.
+                    </p>
+
+                    <div class="experience-facts">
+                        <div class="fact">
+                            <strong>10+ lat</strong>
+                            <span>komercyjnego doświadczenia w IT</span>
+                        </div>
+                        <div class="fact">
+                            <strong>7 lat</strong>
+                            <span>pracy z WordPress i WooCommerce</span>
+                        </div>
+                        <div class="fact">
+                            <strong>Full-stack</strong>
+                            <span>frontend, backend i integracje</span>
+                        </div>
+                        <div class="fact">
+                            <strong>Praktyka</strong>
+                            <span>teoria połączona z realnymi przykładami</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- METHOD -->
+        <section class="section method-section" id="metoda">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Jak wyglądają zajęcia</span>
+                    <h2>Jasny plan zamiast przypadkowego przerabiania tematów.</h2>
+                    <p>
+                        Punkt wyjścia to zawsze konkretna potrzeba. Dopiero na tej
+                        podstawie dobieramy zakres i sposób pracy.
+                    </p>
+                </div>
+
+                <div class="method-grid">
+                    <article class="method-card">
+                        <span class="method-step">01</span>
+                        <h3>Poznajemy cel</h3>
+                        <p>
+                            Ustalamy, czego dotyczy trudność i co chcesz osiągnąć:
+                            lepsze rozumienie materiału, egzamin czy rozwój umiejętności.
+                        </p>
+                    </article>
+
+                    <article class="method-card">
+                        <span class="method-step">02</span>
+                        <h3>Sprawdzamy punkt wyjścia</h3>
+                        <p>
+                            Rozpoznajemy, które zagadnienia są już opanowane,
+                            a które wymagają spokojnego wyjaśnienia.
+                        </p>
+                    </article>
+
+                    <article class="method-card">
+                        <span class="method-step">03</span>
+                        <h3>Pracujemy na przykładach</h3>
+                        <p>
+                            Łączymy wyjaśnienia z zadaniami i praktyką,
+                            stopniowo zwiększając samodzielność.
+                        </p>
+                    </article>
+
+                    <article class="method-card">
+                        <span class="method-step">04</span>
+                        <h3>Utrwalamy rozumienie</h3>
+                        <p>
+                            Wracamy do kluczowych zagadnień i ćwiczymy
+                            samodzielne dochodzenie do rozwiązania.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- AUDIENCE -->
+        <section class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">Dla kogo</span>
+                    <h2>Różne cele. Wspólny punkt: chęć zrozumienia.</h2>
+                </div>
+
+                <div class="audience-grid">
+                    <article class="audience-card">
+                        <div class="audience-icon" aria-hidden="true">🎓</div>
+                        <h3>Uczniowie</h3>
+                        <p>
+                            Uczniowie szkół podstawowych i ponadpodstawowych,
+                            którzy chcą lepiej rozumieć materiał i uporządkować wiedzę.
+                        </p>
+                    </article>
+
+                    <article class="audience-card">
+                        <div class="audience-icon" aria-hidden="true">📘</div>
+                        <h3>Maturzyści</h3>
+                        <p>
+                            Osoby przygotowujące się do matury, potrzebujące
+                            planu powtórek, praktyki i pracy nad konkretnymi zagadnieniami.
+                        </p>
+                    </article>
+
+                    <article class="audience-card">
+                        <div class="audience-icon" aria-hidden="true">💻</div>
+                        <h3>Osoby rozwijające umiejętności</h3>
+                        <p>
+                            Osoby zainteresowane programowaniem, informatyką
+                            lub angielskim wykorzystywanym w środowisku zawodowym.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section faq-section" id="faq">
+            <div class="container">
+                <div class="section-heading">
+                    <span class="eyebrow">FAQ</span>
+                    <h2>Najczęściej zadawane pytania.</h2>
+                    <p>
+                        Kilka informacji na początek. Szczegóły dotyczące organizacji
+                        ustalamy indywidualnie.
+                    </p>
+                </div>
+
+                <div class="faq-list">
+                    <details class="faq-item">
+                        <summary>Dla jakiego poziomu są przeznaczone zajęcia?</summary>
+                        <div class="faq-answer">
+                            <p>
+                                Oferta szkolna obejmuje uczniów szkół podstawowych
+                                i ponadpodstawowych, w tym maturzystów. Zajęcia
+                                specjalistyczne są ustalane na podstawie konkretnego celu
+                                i zakresu materiału.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czy pomagasz w przygotowaniu do matury?</summary>
+                        <div class="faq-answer">
+                            <p>
+                                Tak. Możemy pracować nad bieżącymi zagadnieniami,
+                                powtórkami, rozwiązywaniem zadań i utrwalaniem materiału.
+                                Zakres przygotowań ustalamy indywidualnie.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czy zajęcia z informatyki i programowania mogą odbywać się po angielsku?</summary>
+                        <div class="faq-answer">
+                            <p>
+                                Tak. Informatyka i programowanie mogą być prowadzone
+                                w języku angielskim. Dostępne są również zajęcia
+                                z Business English.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Jak wygląda pierwsze spotkanie?</summary>
+                        <div class="faq-answer">
+                            <p>
+                                Zaczynamy od rozmowy o celu, aktualnym poziomie
+                                i zagadnieniach, nad którymi chcesz pracować.
+                                Na tej podstawie ustalamy dalszy kierunek zajęć.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Jakie materiały należy przygotować?</summary>
+                        <div class="faq-answer">
+                            <p>
+                                Jeśli zajęcia dotyczą konkretnego przedmiotu lub problemu,
+                                warto mieć pod ręką materiał, zadania albo przykłady,
+                                z którymi pojawiła się trudność. Szczegóły ustalimy przed spotkaniem.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Jaka jest cena i forma zajęć?</summary>
+                        <div class="faq-answer">
+                            <p>
+                                Warunki organizacyjne, forma zajęć i cena wymagają
+                                indywidualnego ustalenia. Napisz, czego potrzebujesz,
+                                a omówimy możliwe rozwiązanie.
+                            </p>
+                        </div>
+                    </details>
+
+                    <details class="faq-item">
+                        <summary>Czy mogę zapytać o temat spoza wymienionych obszarów?</summary>
+                        <div class="faq-answer">
+                            <p>
+                                Oczywiście. Opisz zagadnienie i swój cel — wspólnie
+                                ocenimy, czy mogę pomóc w danym zakresie.
+                            </p>
+                        </div>
+                    </details>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="contact-section" id="kontakt">
+            <div class="container contact-grid">
+                <div>
+                    <span class="eyebrow">Pierwszy krok</span>
+                    <h2>Powiedz, czego chcesz się nauczyć. Resztę ustalimy wspólnie.</h2>
+                    <p>
+                        Napisz kilka słów o przedmiocie, poziomie i celu.
+                        Wrócimy do tego, aby ustalić, jaki zakres pracy będzie
+                        najbardziej sensowny.
+                    </p>
+                </div>
+
+                <div class="contact-actions">
+                    <a class="button" href="mailto:[EMAIL_ADDRESS]">
+                        Napisz wiadomość <span aria-hidden="true">→</span>
+                    </a>
+                    <a class="button button-secondary" href="[LINKEDIN_PROFILE_URL]" target="_blank"
+                        rel="noopener noreferrer">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>© <span id="currentYear"></span> Adrian Szlegel</span>
+
+            <div class="footer-links">
+                <a href="https://adrszl.github.io/">Główne portfolio</a>
+                <a href="https://adrszl.github.io/revenue-studio/">Web Development Studio</a>
+                <a href="[LINKEDIN_PROFILE_URL]" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuToggle = document.getElementById("menuToggle");
+        const navLinks = document.getElementById("navLinks");
+
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navLinks.classList.toggle("is-open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Zamknij menu" : "Otwórz menu"
+            );
+            menuToggle.textContent = isOpen ? "×" : "☰";
+        });
+
+        navLinks.querySelectorAll("a").forEach((link) => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("is-open");
+                menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", "Otwórz menu");
+                menuToggle.textContent = "☰";
+            });
+        });
+
+        document.getElementById("currentYear").textContent =
+            new Date().getFullYear();
+    </script>
+</body>
+
+</html>
