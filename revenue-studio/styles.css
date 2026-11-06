@@ -3,3 +3,34 @@
 @media(max-width:680px){.wrap,header{width:calc(100% - 36px)}header{height:72px}.head-right,nav{display:none}.hamb{display:block}.nav-open{display:flex;position:absolute;top:68px;left:0;right:0;flex-direction:column;align-items:flex-start;padding:15px;background:#10091b;border:1px solid #302044;border-radius:10px}.hero{grid-template-columns:1fr;padding-top:55px}.hero-art{min-height:340px}.hero-art img{max-width:370px}.orbit{width:340px;height:250px}.trust{flex-wrap:wrap;justify-content:center;padding-bottom:65px}.trust span{flex-basis:40%;text-align:center}.two,.approach,.three,.product,.contact .two{grid-template-columns:1fr}.section{padding-bottom:75px}.band{padding:75px 0}.product{padding:25px;margin-bottom:75px}.product-mark{height:175px}.contact{padding:70px 0}.foot-top,.foot-bottom{align-items:flex-start;gap:15px;flex-direction:column}}
 @media(min-width:1024px){.mobile-back{display: none;}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+
+/* Upcoming product sections */
+.product--tool{grid-template-columns:1fr .85fr;min-height:390px;overflow:hidden;position:relative}
+.product--tool .tool-copy{position:relative;z-index:1}
+.product--tool .tool-copy h2{font-size:clamp(38px,4.2vw,54px);line-height:1.04;letter-spacing:-.055em;margin:17px 0}
+.product--tool .tool-points{list-style:none;padding:0;margin:22px 0 25px;display:grid;gap:10px;color:#b8aec5;font-size:12px}
+.product--tool .tool-points li{display:flex;align-items:flex-start;gap:10px}
+.product--tool .tool-points li:before{content:"↗";color:#c17aff;font-weight:700}
+.product--tool .tool-cta{margin-top:18px}
+.product--reverse{grid-template-columns:.85fr 1fr}
+.product--reverse .tool-visual{order:2}.product--reverse .tool-copy{order:1}
+.tool-visual{min-height:280px;display:grid;place-items:center;position:relative;isolation:isolate}
+.tool-visual:before{content:"";position:absolute;width:85%;height:85%;border-radius:50%;background:#8b19ff18;filter:blur(45px);z-index:-1}
+.tool-window{width:min(100%,410px);padding:18px;border:1px solid #573073;border-radius:13px;background:linear-gradient(145deg,#1a1028ed,#090611f5);box-shadow:0 18px 65px #0008,0 0 35px #8b19ff1c}
+.tool-window-head{display:flex;align-items:center;gap:6px;padding-bottom:15px;border-bottom:1px solid #ffffff13}
+.tool-window-head>span{width:6px;height:6px;border-radius:50%;background:#9255b8}
+.tool-window-head>b{margin-left:auto;color:#9d8bac;font:600 8px 'Space Grotesk';letter-spacing:.12em}
+.tool-stat{padding:18px 2px 14px}.tool-stat small{display:block;color:#9f8db0;font:600 8px 'Space Grotesk';letter-spacing:.13em}
+.tool-stat strong{display:block;margin-top:8px;color:#f4eaff;font:600 25px 'Space Grotesk';letter-spacing:.12em}
+.tool-stat i{font-style:normal;color:#bd62ff;font-size:15px}
+.tool-row{display:grid;grid-template-columns:30px 1fr auto;align-items:center;gap:10px;padding:12px 10px;margin-top:8px;border:1px solid #ffffff12;border-radius:8px;background:#ffffff05}
+.tool-row>b{display:grid;place-items:center;width:27px;height:27px;border-radius:7px;background:#8b19ff24;color:#d5a7ff}
+.tool-row strong,.flow-node strong{display:block;font:600 11px 'Space Grotesk';color:#eee2fa}
+.tool-row small,.flow-node small{display:block;color:#9e91aa;font-size:9px;margin-top:3px}
+.tool-row em{font:600 9px 'Space Grotesk';color:#bd62ff;font-style:normal}
+.tool-window-foot{display:flex;justify-content:space-between;gap:10px;margin-top:15px;padding-top:12px;border-top:1px solid #ffffff13;color:#8e7da0;font:600 7px 'Space Grotesk';letter-spacing:.11em}
+.flow-node{display:flex;align-items:center;gap:12px;padding:13px;margin-top:12px;border:1px solid #ffffff18;border-radius:8px;background:#ffffff06}
+.flow-node>b{display:grid;place-items:center;width:29px;height:29px;border-radius:8px;background:#8b19ff27;color:#d7aff8;font:600 10px 'Space Grotesk'}
+.flow-node--telegram{border-color:#6c3d8d;background:#8b19ff12}
+.flow-connector{height:15px;width:1px;margin-left:27px;background:linear-gradient(#a64aff,#6d3c91)}
+@media(max-width:680px){.product--tool,.product--reverse{grid-template-columns:1fr;padding:25px;margin-top:18px}.product--reverse .tool-visual,.product--reverse .tool-copy{order:initial}.tool-visual{min-height:245px;margin-top:8px}.tool-window{padding:14px}.product--tool .tool-points{font-size:11px}}
