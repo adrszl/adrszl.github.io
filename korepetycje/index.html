@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#172B4D">
 
-    <title>Korepetycje i zajęcia indywidualne | Matematyka, IT, angielski — Adrian Szlegel</title>
-    <meta name="description"
-        content="Indywidualne zajęcia edukacyjne i korepetycje z matematyki, informatyki, programowania i angielskiego. Ponad 10 lat doświadczenia w IT. Online i stacjonarnie w Poznaniu.">
+    <title>Korepetycje Poznań | Matematyka, informatyka, programowanie i angielski — Adrian Szlegel</title>
+    <meta id="pageDescription" name="description"
+        content="Korepetycje w Poznaniu i online: matematyka podstawowa i rozszerzona, informatyka maturalna, programowanie oraz angielski. Ponad 10 lat doświadczenia w IT.">
 
     <link rel="canonical" href="https://adrszl.github.io/korepetycje/">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -2078,8 +2078,16 @@
             });
 
             document.title = selectedLanguage === "en"
-                ? "Private Tutoring & Educational Sessions | Adrian Szlegel"
-                : "Korepetycje i zajęcia indywidualne | Adrian Szlegel";
+                ? "Private Tutoring | Mathematics, Computer Science, Programming & English — Adrian Szlegel"
+                : "Korepetycje Poznań | Matematyka, informatyka, programowanie i angielski — Adrian Szlegel";
+
+            const pageDescription = document.getElementById("pageDescription");
+
+            if (pageDescription) {
+                pageDescription.content = selectedLanguage === "en"
+                    ? "Online tutoring and in-person lessons in Poznań: mathematics, computer science exam preparation, programming and English. Over 10 years of professional IT experience."
+                    : "Korepetycje w Poznaniu i online: matematyka podstawowa i rozszerzona, informatyka maturalna, programowanie oraz angielski. Ponad 10 lat doświadczenia w IT.";
+            }
 
             try {
                 localStorage.setItem("preferred-language", selectedLanguage);
