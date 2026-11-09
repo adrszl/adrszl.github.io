@@ -20,6 +20,8 @@
     <meta property="og:image" content="https://adrszl.github.io/img/profilowe1.jpg">
     <meta property="og:url" content="https://adrszl.github.io/korepetycje/">
 
+    <script id="structuredData" type="application/ld+json"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -2080,6 +2082,75 @@
             document.title = selectedLanguage === "en"
                 ? "Private Tutoring & Educational Sessions | Adrian Szlegel"
                 : "Korepetycje i zajęcia indywidualne | Adrian Szlegel";
+
+            const structuredData = document.getElementById("structuredData");
+
+            if (structuredData) {
+                const isEnglish = selectedLanguage === "en";
+
+                const schema = {
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "Person",
+                            "@id": "https://adrszl.github.io/#person",
+                            "name": "Adrian Szlegel",
+                            "url": "https://adrszl.github.io/",
+                            "image": "https://adrszl.github.io/img/profilowe1.jpg",
+                            "jobTitle": isEnglish ? "Private tutor" : "Korepetytor",
+                            "sameAs": [
+                                "https://www.linkedin.com/in/adrian-szlegel/"
+                            ],
+                            "knowsAbout": [
+                                "Mathematics",
+                                "Computer science",
+                                "Programming",
+                                "Web technologies",
+                                "English",
+                                "Business English"
+                            ]
+                        },
+                        {
+                            "@type": "Service",
+                            "@id": "https://adrszl.github.io/korepetycje/#tutoring-service",
+                            "name": isEnglish
+                                ? "Private tutoring and individual educational sessions"
+                                : "Korepetycje i indywidualne zajęcia edukacyjne",
+                            "description": isEnglish
+                                ? "Individual and small-group tutoring in mathematics, computer science, programming and English. Online lessons and in-person sessions in Poznań and the surrounding area."
+                                : "Indywidualne i grupowe korepetycje z matematyki, informatyki, programowania i języka angielskiego. Zajęcia online oraz stacjonarnie w Poznaniu i okolicach.",
+                            "serviceType": isEnglish
+                                ? ["Mathematics tutoring", "Computer science tutoring", "Programming lessons", "English lessons"]
+                                : ["Korepetycje z matematyki", "Korepetycje z informatyki", "Nauka programowania", "Zajęcia z języka angielskiego"],
+                            "provider": {
+                                "@id": "https://adrszl.github.io/#person"
+                            },
+                            "areaServed": {
+                                "@type": "City",
+                                "name": "Poznań"
+                            },
+                            "availableChannel": [
+                                {
+                                    "@type": "ServiceChannel",
+                                    "serviceType": isEnglish ? "Online tutoring" : "Zajęcia online"
+                                },
+                                {
+                                    "@type": "ServiceChannel",
+                                    "serviceType": isEnglish ? "In-person tutoring" : "Zajęcia stacjonarne",
+                                    "serviceLocation": {
+                                        "@type": "Place",
+                                        "name": isEnglish ? "Poznań and the surrounding area" : "Poznań i okolice"
+                                    }
+                                }
+                            ],
+                            "availableLanguage": ["Polish", "English"],
+                            "url": "https://adrszl.github.io/korepetycje/"
+                        }
+                    ]
+                };
+
+                structuredData.textContent = JSON.stringify(schema);
+            }
 
             const contactEmailLink = document.getElementById("contactEmailLink");
 
