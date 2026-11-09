@@ -1125,10 +1125,35 @@
                 transition-duration: .01ms !important;
             }
         }
-    </style>
+    
+
+        .skip-link {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 1000;
+            padding: 12px 16px;
+            transform: translateY(-160%);
+            border-radius: 8px;
+            background: var(--navy);
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 3px;
+        }
+</style>
 </head>
 
 <body>
+    <a class="skip-link" href="#mainContent" data-i18n="skipToContent">Przejdź do treści</a>
     <header class="site-header">
         <nav class="nav container" id="mainNavigation" aria-label="Główna nawigacja">
             <a class="brand" href="#top">
@@ -1156,6 +1181,7 @@
     </header>
 
     <main id="top">
+        <span id="mainContent" tabindex="-1"></span>
 
         <!-- HERO -->
         <section class="hero">
@@ -1770,6 +1796,7 @@
         const translations = {
             pl: {
                 navAriaLabel: "Główna nawigacja",
+                skipToContent: "Przejdź do treści",
                 languageSwitcherLabel: "Wybór języka",
                 menuOpenLabel: "Otwórz menu",
                 menuCloseLabel: "Zamknij menu",
@@ -1918,6 +1945,7 @@
 
             en: {
                 navAriaLabel: "Main navigation",
+                skipToContent: "Skip to content",
                 languageSwitcherLabel: "Language selection",
                 menuOpenLabel: "Open menu",
                 menuCloseLabel: "Close menu",
