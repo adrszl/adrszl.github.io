@@ -1739,7 +1739,7 @@
                 </div>
 
                 <div class="contact-actions">
-                    <a class="button" href="mailto:adrian.szlegel@hotmail.com">
+                    <a class="button" id="contactEmailLink" href="mailto:adrian.szlegel@hotmail.com">
                         <span data-i18n="emailButton">Napisz e-mail</span> →
                     </a>
                     <a class="button button-secondary" href="https://www.linkedin.com/in/adrian-szlegel/"
@@ -2080,6 +2080,20 @@
             document.title = selectedLanguage === "en"
                 ? "Private Tutoring & Educational Sessions | Adrian Szlegel"
                 : "Korepetycje i zajęcia indywidualne | Adrian Szlegel";
+
+            const contactEmailLink = document.getElementById("contactEmailLink");
+
+            if (contactEmailLink) {
+                const subject = selectedLanguage === "en"
+                    ? "Tutoring enquiry"
+                    : "Zapytanie o korepetycje";
+
+                const body = selectedLanguage === "en"
+                    ? "Hello,\n\nI'm getting in touch to ask about tutoring.\n\nSubject / area:\nCurrent level:\nLearning goal:\nPreferred format (online / in person):\nPreferred dates or times:\n\nThank you."
+                    : "Dzień dobry,\n\nPiszę w sprawie zajęć i chciałbym/chciałabym zapytać o szczegóły.\n\nPrzedmiot / obszar:\nAktualny poziom:\nCel nauki:\nPreferowana forma (online / stacjonarnie):\nPreferowane terminy:\n\nDziękuję.";
+
+                contactEmailLink.href = `mailto:adrian.szlegel@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }
 
             try {
                 localStorage.setItem("preferred-language", selectedLanguage);
