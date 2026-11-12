@@ -28,4 +28,4 @@
 
 ### Adrian Szlegel - where to find
 
-### Adrian Szlegel - CV
+### Adrian Szlegel - CV 
