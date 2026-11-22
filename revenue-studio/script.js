@@ -15,3 +15,29 @@ const menu=document.querySelector(".hamb"),nav=document.querySelector("nav");men
  Object.assign(copy.en,productCopy.en);Object.assign(copy.pl,productCopy.pl);
  setLang(document.documentElement.lang||"en",false);
 })();
+
+
+/* Restaurant service teaser — bilingual copy, public teaser only. */
+(() => {
+ const restaurantCopy = {
+  en: {
+   restaurantEyebrow:"NEW SERVICE · COMING SOON",
+   restaurantTitle:"Restaurant websites & online ordering.",
+   restaurantText:"We're preparing a dedicated service for restaurants — from polished websites and digital menus to online ordering and custom platforms tailored to the way each venue works.",
+   restaurantTag1:"Restaurant websites", restaurantTag2:"Online ordering",
+   restaurantTag3:"Custom platforms", restaurantStatus:"A NEW REVENUE STUDIO SERVICE",
+   restaurantComing:"COMING SOON"
+  },
+  pl: {
+   restaurantEyebrow:"NOWA USŁUGA · JUŻ WKRÓTCE",
+   restaurantTitle:"Strony internetowe i zamówienia online dla restauracji.",
+   restaurantText:"Przygotowujemy ofertę dla gastronomii — od dopracowanych stron i cyfrowych kart menu po systemy zamówień online oraz dedykowane platformy dopasowane do sposobu działania lokalu.",
+   restaurantTag1:"Strony restauracji", restaurantTag2:"Zamówienia online",
+   restaurantTag3:"Dedykowane systemy", restaurantStatus:"NOWA USŁUGA REVENUE STUDIO",
+   restaurantComing:"JUŻ WKRÓTCE"
+  }
+ };
+ Object.assign(copy.en, restaurantCopy.en);
+ Object.assign(copy.pl, restaurantCopy.pl);
+ setLang(document.documentElement.lang || "en", false);
+})();
