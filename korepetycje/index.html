@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#172B4D">
 
-    <title>Korepetycje i zajęcia indywidualne | Matematyka, IT, angielski — Adrian Szlegel</title>
-    <meta name="description"
-        content="Indywidualne zajęcia edukacyjne i korepetycje z matematyki, informatyki, programowania i angielskiego. Ponad 10 lat doświadczenia w IT. Online i stacjonarnie w Poznaniu.">
+    <title>Korepetycje Poznań | Matematyka, informatyka, programowanie i angielski — Adrian Szlegel</title>
+    <meta id="pageDescription" name="description"
+        content="Korepetycje w Poznaniu i online: matematyka podstawowa i rozszerzona, informatyka maturalna, programowanie oraz angielski. Ponad 10 lat doświadczenia w IT.">
 
     <link rel="canonical" href="https://adrszl.github.io/korepetycje/">
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico">
@@ -19,6 +19,8 @@
         content="Matematyka, informatyka, programowanie i angielski. Nauka przez zrozumienie i praktykę.">
     <meta property="og:image" content="https://adrszl.github.io/img/profilowe1.jpg">
     <meta property="og:url" content="https://adrszl.github.io/korepetycje/">
+
+    <script id="structuredData" type="application/ld+json"></script>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1123,12 +1125,37 @@
                 transition-duration: .01ms !important;
             }
         }
-    </style>
+    
+
+        .skip-link {
+            position: absolute;
+            top: 12px;
+            left: 12px;
+            z-index: 1000;
+            padding: 12px 16px;
+            transform: translateY(-160%);
+            border-radius: 8px;
+            background: var(--navy);
+            color: white;
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        .skip-link:focus {
+            transform: translateY(0);
+        }
+
+        :focus-visible {
+            outline: 3px solid var(--blue);
+            outline-offset: 3px;
+        }
+</style>
 </head>
 
 <body>
+    <a class="skip-link" href="#mainContent" data-i18n="skipToContent">Przejdź do treści</a>
     <header class="site-header">
-        <nav class="nav container" aria-label="Main navigation">
+        <nav class="nav container" id="mainNavigation" aria-label="Główna nawigacja">
             <a class="brand" href="#top">
                 <span class="brand-mark">A.</span>
                 <span>Adrian Szlegel <small>/ Education</small></span>
@@ -1143,17 +1170,18 @@
                     <li><a class="nav-cta" href="#contact" data-i18n="navContact">Kontakt</a></li>
                 </ul>
 
-                <div class="language-switch" aria-label="Language">
+                <div class="language-switch" id="languageSwitch" role="group" aria-label="Wybór języka">
                     <button type="button" data-lang="pl">PL</button>
                     <button type="button" data-lang="en">EN</button>
                 </div>
 
-                <button class="menu-toggle" id="menuToggle" aria-label="Open menu" aria-expanded="false">☰</button>
+                <button class="menu-toggle" id="menuToggle" type="button" aria-label="Otwórz menu" aria-controls="navLinks" aria-expanded="false">☰</button>
             </div>
         </nav>
     </header>
 
     <main id="top">
+        <span id="mainContent" tabindex="-1"></span>
 
         <!-- HERO -->
         <section class="hero">
@@ -1195,7 +1223,7 @@
                         <img src="../img/profilowe1.jpg" alt="Adrian Szlegel" width="600" height="750">
                     </div>
                     <div class="experience-note">
-                        <strong>10+ years</strong>
+                        <strong data-i18n="commercialExperience">10+ lat</strong>
                         <span data-i18n="experienceLabel">doświadczenia komercyjnego w branży IT</span>
                     </div>
                 </div>
@@ -1461,11 +1489,11 @@
 
                     <div class="experience-facts">
                         <div class="fact">
-                            <strong>10+ years</strong>
+                            <strong>10+ lat</strong>
                             <span data-i18n="fact1">komercyjnego doświadczenia w IT</span>
                         </div>
                         <div class="fact">
-                            <strong>7 years</strong>
+                            <strong>7 lat</strong>
                             <span data-i18n="fact2">pracy z WordPress i WooCommerce</span>
                         </div>
                         <div class="fact">
@@ -1473,7 +1501,7 @@
                             <span data-i18n="fact3">frontend, backend i integracje</span>
                         </div>
                         <div class="fact">
-                            <strong>Practical</strong>
+                            <strong>Praktyka</strong>
                             <span data-i18n="fact4">teoria połączona z realnymi przykładami</span>
                         </div>
                     </div>
@@ -1739,7 +1767,7 @@
                 </div>
 
                 <div class="contact-actions">
-                    <a class="button" href="mailto:adrian.szlegel@hotmail.com">
+                    <a class="button" id="contactEmailLink" href="mailto:adrian.szlegel@hotmail.com">
                         <span data-i18n="emailButton">Napisz e-mail</span> →
                     </a>
                     <a class="button button-secondary" href="https://www.linkedin.com/in/adrian-szlegel/"
@@ -1767,6 +1795,11 @@
     <script>
         const translations = {
             pl: {
+                navAriaLabel: "Główna nawigacja",
+                skipToContent: "Przejdź do treści",
+                languageSwitcherLabel: "Wybór języka",
+                menuOpenLabel: "Otwórz menu",
+                menuCloseLabel: "Zamknij menu",
                 navOffer: "Oferta",
                 navAbout: "O mnie",
                 navMethod: "Metoda",
@@ -1782,6 +1815,7 @@
                 tagHighSchool: "Szkoła średnia",
                 tagMatura: "Matura — podstawa i rozszerzenie",
                 tagSpecialist: "Zajęcia specjalistyczne",
+                commercialExperience: "10+ lat",
                 experienceLabel: "doświadczenia komercyjnego w branży IT",
 
                 stripLead: "<strong>Nie chodzi o zapamiętanie odpowiedzi.</strong> Chodzi o zrozumienie, skąd się biorą.",
@@ -1910,6 +1944,11 @@
             },
 
             en: {
+                navAriaLabel: "Main navigation",
+                skipToContent: "Skip to content",
+                languageSwitcherLabel: "Language selection",
+                menuOpenLabel: "Open menu",
+                menuCloseLabel: "Close menu",
                 navOffer: "Subjects",
                 navAbout: "About me",
                 navMethod: "My approach",
@@ -1925,6 +1964,7 @@
                 tagHighSchool: "Secondary school",
                 tagMatura: "Basic and advanced exams",
                 tagSpecialist: "Specialist sessions",
+                commercialExperience: "10+ years",
                 experienceLabel: "of commercial experience in IT",
 
                 stripLead: "<strong>It is not about memorising answers.</strong> It is about understanding where they come from.",
@@ -2061,6 +2101,9 @@
 
             document.documentElement.lang = selectedLanguage;
 
+            document.getElementById("mainNavigation").setAttribute("aria-label", dictionary.navAriaLabel);
+            document.getElementById("languageSwitch").setAttribute("aria-label", dictionary.languageSwitcherLabel);
+
             document.querySelectorAll("[data-i18n]").forEach((element) => {
                 const key = element.dataset.i18n;
 
@@ -2076,8 +2119,99 @@
             });
 
             document.title = selectedLanguage === "en"
-                ? "Private Tutoring & Educational Sessions | Adrian Szlegel"
-                : "Korepetycje i zajęcia indywidualne | Adrian Szlegel";
+                ? "Private Tutoring | Mathematics, Computer Science, Programming & English — Adrian Szlegel"
+                : "Korepetycje Poznań | Matematyka, informatyka, programowanie i angielski — Adrian Szlegel";
+
+            const pageDescription = document.getElementById("pageDescription");
+
+            if (pageDescription) {
+                pageDescription.content = selectedLanguage === "en"
+                    ? "Online tutoring and in-person lessons in Poznań: mathematics, computer science exam preparation, programming and English. Over 10 years of professional IT experience."
+                    : "Korepetycje w Poznaniu i online: matematyka podstawowa i rozszerzona, informatyka maturalna, programowanie oraz angielski. Ponad 10 lat doświadczenia w IT.";
+            }
+
+            const structuredData = document.getElementById("structuredData");
+
+            if (structuredData) {
+                const isEnglish = selectedLanguage === "en";
+
+                const schema = {
+                    "@context": "https://schema.org",
+                    "@graph": [
+                        {
+                            "@type": "Person",
+                            "@id": "https://adrszl.github.io/#person",
+                            "name": "Adrian Szlegel",
+                            "url": "https://adrszl.github.io/",
+                            "image": "https://adrszl.github.io/img/profilowe1.jpg",
+                            "jobTitle": isEnglish ? "Private tutor" : "Korepetytor",
+                            "sameAs": [
+                                "https://www.linkedin.com/in/adrian-szlegel/"
+                            ],
+                            "knowsAbout": [
+                                "Mathematics",
+                                "Computer science",
+                                "Programming",
+                                "Web technologies",
+                                "English",
+                                "Business English"
+                            ]
+                        },
+                        {
+                            "@type": "Service",
+                            "@id": "https://adrszl.github.io/korepetycje/#tutoring-service",
+                            "name": isEnglish
+                                ? "Private tutoring and individual educational sessions"
+                                : "Korepetycje i indywidualne zajęcia edukacyjne",
+                            "description": isEnglish
+                                ? "Individual and small-group tutoring in mathematics, computer science, programming and English. Online lessons and in-person sessions in Poznań and the surrounding area."
+                                : "Indywidualne i grupowe korepetycje z matematyki, informatyki, programowania i języka angielskiego. Zajęcia online oraz stacjonarnie w Poznaniu i okolicach.",
+                            "serviceType": isEnglish
+                                ? ["Mathematics tutoring", "Computer science tutoring", "Programming lessons", "English lessons"]
+                                : ["Korepetycje z matematyki", "Korepetycje z informatyki", "Nauka programowania", "Zajęcia z języka angielskiego"],
+                            "provider": {
+                                "@id": "https://adrszl.github.io/#person"
+                            },
+                            "areaServed": {
+                                "@type": "City",
+                                "name": "Poznań"
+                            },
+                            "availableChannel": [
+                                {
+                                    "@type": "ServiceChannel",
+                                    "serviceType": isEnglish ? "Online tutoring" : "Zajęcia online"
+                                },
+                                {
+                                    "@type": "ServiceChannel",
+                                    "serviceType": isEnglish ? "In-person tutoring" : "Zajęcia stacjonarne",
+                                    "serviceLocation": {
+                                        "@type": "Place",
+                                        "name": isEnglish ? "Poznań and the surrounding area" : "Poznań i okolice"
+                                    }
+                                }
+                            ],
+                            "availableLanguage": ["Polish", "English"],
+                            "url": "https://adrszl.github.io/korepetycje/"
+                        }
+                    ]
+                };
+
+                structuredData.textContent = JSON.stringify(schema);
+            }
+
+            const contactEmailLink = document.getElementById("contactEmailLink");
+
+            if (contactEmailLink) {
+                const subject = selectedLanguage === "en"
+                    ? "Tutoring enquiry"
+                    : "Zapytanie o korepetycje";
+
+                const body = selectedLanguage === "en"
+                    ? "Hello,\n\nI'm getting in touch to ask about tutoring.\n\nSubject / area:\nCurrent level:\nLearning goal:\nPreferred format (online / in person):\nPreferred dates or times:\n\nThank you."
+                    : "Dzień dobry,\n\nPiszę w sprawie zajęć i chciałbym/chciałabym zapytać o szczegóły.\n\nPrzedmiot / obszar:\nAktualny poziom:\nCel nauki:\nPreferowana forma (online / stacjonarnie):\nPreferowane terminy:\n\nDziękuję.";
+
+                contactEmailLink.href = `mailto:adrian.szlegel@hotmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            }
 
             try {
                 localStorage.setItem("preferred-language", selectedLanguage);
@@ -2114,6 +2248,9 @@
         menuToggle.addEventListener("click", () => {
             const open = navLinks.classList.toggle("is-open");
             menuToggle.setAttribute("aria-expanded", String(open));
+            menuToggle.setAttribute("aria-label", open
+                ? translations[document.documentElement.lang].menuCloseLabel
+                : translations[document.documentElement.lang].menuOpenLabel);
             menuToggle.textContent = open ? "×" : "☰";
         });
 
@@ -2121,6 +2258,7 @@
             link.addEventListener("click", () => {
                 navLinks.classList.remove("is-open");
                 menuToggle.setAttribute("aria-expanded", "false");
+                menuToggle.setAttribute("aria-label", translations[document.documentElement.lang].menuOpenLabel);
                 menuToggle.textContent = "☰";
             });
         });
