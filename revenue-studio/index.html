@@ -37,8 +37,42 @@
     <span class="service-upcoming__icon" aria-hidden="true">✦</span>
     <small data-t="restaurantStatus">A NEW REVENUE STUDIO SERVICE</small>
     <strong data-t="restaurantComing">COMING SOON</strong>
+    <button class="service-upcoming__expand" type="button" id="restaurant-details-open" aria-haspopup="dialog" aria-controls="restaurant-details" data-t="restaurantExpand">Explore the service</button>
   </div>
 </div>
+<dialog class="restaurant-dialog" id="restaurant-details" aria-labelledby="restaurant-dialog-title">
+  <div class="restaurant-dialog__panel">
+    <button class="restaurant-dialog__close" type="button" id="restaurant-details-close" aria-label="Close details">×</button>
+    <div class="restaurant-dialog__intro">
+      <label class="eyebrow" data-t="restaurantDialogEyebrow">A CLOSER LOOK</label>
+      <h2 id="restaurant-dialog-title" data-t="restaurantDialogTitle">A digital home for your restaurant.</h2>
+      <p data-t="restaurantDialogText">A beautiful website is only the beginning. Bring your menu, reservations and online orders together in one clear experience, designed around your venue.</p>
+    </div>
+    <div class="restaurant-dialog__gallery" aria-label="Restaurant website concept previews">
+      <figure class="restaurant-dialog__visual-card">
+        <div class="restaurant-dialog__visual restaurant-dialog__visual--home" role="img" aria-label="Restaurant website homepage concept"></div>
+        <figcaption data-t="restaurantVisual1">A memorable first impression</figcaption>
+      </figure>
+      <figure class="restaurant-dialog__visual-card">
+        <div class="restaurant-dialog__visual restaurant-dialog__visual--menu" role="img" aria-label="Digital restaurant menu concept"></div>
+        <figcaption data-t="restaurantVisual2">A menu that makes choosing easy</figcaption>
+      </figure>
+      <figure class="restaurant-dialog__visual-card">
+        <div class="restaurant-dialog__visual restaurant-dialog__visual--orders" role="img" aria-label="Online restaurant ordering concept"></div>
+        <figcaption data-t="restaurantVisual3">A smoother path to an order</figcaption>
+      </figure>
+    </div>
+    <div class="restaurant-dialog__features">
+      <article><span>01</span><h3 data-t="restaurantFeature1Title">Your brand, properly presented</h3><p data-t="restaurantFeature1Text">A fast, responsive website that reflects the character of your place and works beautifully on mobile.</p></article>
+      <article><span>02</span><h3 data-t="restaurantFeature2Title">Menu and ordering in one place</h3><p data-t="restaurantFeature2Text">Clear menus, direct online orders and useful integrations — without sending guests through unnecessary steps.</p></article>
+      <article><span>03</span><h3 data-t="restaurantFeature3Title">Built around your operation</h3><p data-t="restaurantFeature3Text">From a simple restaurant website to a custom platform, the scope follows the way your team works.</p></article>
+    </div>
+    <div class="restaurant-dialog__footer">
+      <p data-t="restaurantDialogFootnote">See what a dedicated restaurant solution can include.</p>
+      <a class="restaurant-dialog__cta" href="restaurants/" data-t="restaurantDialogCta">Explore restaurant services ↗</a>
+    </div>
+  </div>
+</dialog>
 </section>
 <section class="wrap product"><div><label class="eyebrow" data-t="productEyebrow">BUILT IN-HOUSE</label><h2>WooCommerce<br><em>Revenue Guard.</em></h2><p class="intro" data-t="productText">We're also developing our own tools. Revenue Guard is our initiative focused on helping WooCommerce stores keep an eye on important technical health signals and configuration issues.</p><small class="roadmap" data-t="productStatus">IN DEVELOPMENT</small></div><div class="product-mark"><b>R</b><span>REVENUE <strong>GUARD</strong><small>FOR WOOCOMMERCE</small></span></div></section>
 
