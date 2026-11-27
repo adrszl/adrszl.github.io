@@ -57,3 +57,71 @@
   .service-upcoming{grid-template-columns:1fr;gap:20px;padding:25px;margin-top:18px}
   .service-upcoming__status{min-height:115px}
 }
+
+
+/* Expandable restaurant service showcase */
+.service-upcoming__expand{
+  display:inline-flex;align-items:center;gap:9px;margin-top:22px;padding:10px 15px;
+  border:1px solid #8b19ff88;border-radius:7px;background:#8b19ff18;color:#ead8fa;
+  font:600 11px 'Space Grotesk',sans-serif;cursor:pointer;transition:background .2s,border-color .2s,transform .2s
+}
+.service-upcoming__expand:hover{background:#8b19ff30;border-color:#bd62ff;transform:translateY(-2px)}
+.restaurant-showcase[hidden]{display:none}
+.restaurant-showcase{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:24px;opacity:0;visibility:hidden;transition:opacity .28s ease,visibility .28s ease}
+.restaurant-showcase.is-open{opacity:1;visibility:visible}
+.restaurant-showcase__backdrop{position:absolute;inset:0;background:rgba(3,2,8,.86);backdrop-filter:blur(12px)}
+.restaurant-showcase__panel{
+  position:relative;z-index:1;width:min(1240px,100%);max-height:min(94vh,980px);overflow:auto;
+  padding:clamp(22px,4vw,48px);border:1px solid #573073;border-radius:18px;
+  background:radial-gradient(ellipse at 90% 0%,#6920a52b,transparent 40%),linear-gradient(145deg,#120b1d,#08060f 72%);
+  box-shadow:0 30px 120px #000b;transform:translateY(20px) scale(.985);transition:transform .32s cubic-bezier(.2,.8,.2,1)
+}
+.restaurant-showcase.is-open .restaurant-showcase__panel{transform:translateY(0) scale(1)}
+.restaurant-showcase__top{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.restaurant-showcase__kicker{color:#c17aff;font:600 9px 'Space Grotesk';letter-spacing:.16em}
+.restaurant-showcase__close{border:1px solid #ffffff22;border-radius:7px;background:#ffffff08;color:#e9dff2;padding:9px 13px;font:600 11px 'DM Sans',sans-serif;cursor:pointer}
+.restaurant-showcase__close:hover{background:#ffffff14}
+.restaurant-showcase__intro{display:flex;align-items:flex-end;justify-content:space-between;gap:35px;margin:30px 0 28px}
+.restaurant-showcase__intro h2{max-width:700px;margin:0 0 12px;font:600 clamp(32px,4.5vw,54px)/1.04 'Space Grotesk';letter-spacing:-.055em}
+.restaurant-showcase__intro h2:after{content:"";display:inline-block;width:8px;height:8px;margin-left:8px;border-radius:50%;background:#bd62ff;vertical-align:middle}
+.restaurant-showcase__intro p{max-width:720px;margin:0;color:#b8aec5;font-size:13px;line-height:1.8}
+.restaurant-showcase__stamp{flex:0 0 180px;padding:15px;border:1px solid #ffffff18;border-radius:10px;background:#ffffff05;text-align:center;font:600 8px 'Space Grotesk';letter-spacing:.16em;color:#9f8caf}
+.restaurant-showcase__stamp strong{display:block;color:#f4eaff;font-size:19px;letter-spacing:.12em}
+.restaurant-showcase__stamp small{display:block;margin-top:5px;font-size:7px}
+.restaurant-showcase__gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.restaurant-showcase__tile{min-width:0;margin:0;padding:8px;border:1px solid #ffffff18;border-radius:10px;background:#ffffff06}
+.restaurant-showcase__tile>div{height:clamp(120px,15vw,190px);border-radius:6px;background-image:url("assets/restaurant-showcase.svg");background-size:200% 200%;background-repeat:no-repeat}
+.restaurant-showcase__tile--home>div{background-position:0 0}
+.restaurant-showcase__tile--menu>div{background-position:100% 0}
+.restaurant-showcase__tile--order>div{background-position:0 100%}
+.restaurant-showcase__tile--cafe>div{background-position:100% 100%}
+.restaurant-showcase__tile figcaption{padding:10px 3px 3px;color:#d8cbe5;font:600 10px 'Space Grotesk'}
+.restaurant-showcase__bottom{display:flex;align-items:center;justify-content:space-between;gap:25px;margin-top:26px;padding-top:22px;border-top:1px solid #ffffff16}
+.restaurant-showcase__features{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px 24px;list-style:none;margin:0;padding:0;color:#b8aec5;font-size:11px}
+.restaurant-showcase__features li{display:flex;gap:9px}
+.restaurant-showcase__features li:before{content:"✦";color:#bd62ff}
+.restaurant-showcase__link{flex-shrink:0;white-space:nowrap}
+body.restaurant-modal-open{overflow:hidden}
+@media(max-width:850px){
+ .restaurant-showcase__gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+ .restaurant-showcase__tile>div{height:clamp(145px,28vw,230px)}
+ .restaurant-showcase__intro{align-items:flex-start}
+ .restaurant-showcase__stamp{display:none}
+}
+@media(max-width:600px){
+ .restaurant-showcase{padding:8px}
+ .restaurant-showcase__panel{max-height:96vh;padding:20px 16px;border-radius:13px}
+ .restaurant-showcase__top{align-items:flex-start}
+ .restaurant-showcase__kicker{max-width:210px;line-height:1.6}
+ .restaurant-showcase__intro{margin:24px 0 20px}
+ .restaurant-showcase__gallery{gap:8px}
+ .restaurant-showcase__tile{padding:5px}
+ .restaurant-showcase__tile>div{height:125px}
+ .restaurant-showcase__tile figcaption{font-size:9px}
+ .restaurant-showcase__bottom{align-items:stretch;flex-direction:column}
+ .restaurant-showcase__features{grid-template-columns:1fr}
+ .restaurant-showcase__link{white-space:normal;text-align:center}
+}
+@media(prefers-reduced-motion:reduce){
+ .restaurant-showcase,.restaurant-showcase__panel,.service-upcoming__expand{transition:none}
+}
