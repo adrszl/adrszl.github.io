@@ -26,7 +26,22 @@ const menu=document.querySelector(".hamb"),nav=document.querySelector("nav");men
    restaurantText:"We're preparing a dedicated service for restaurants — from polished websites and digital menus to online ordering and custom platforms tailored to the way each venue works.",
    restaurantTag1:"Restaurant websites", restaurantTag2:"Online ordering",
    restaurantTag3:"Custom platforms", restaurantStatus:"A NEW REVENUE STUDIO SERVICE",
-   restaurantComing:"COMING SOON"
+   restaurantComing:"COMING SOON",
+   restaurantExpand:"Explore the service",
+   restaurantDialogEyebrow:"A CLOSER LOOK",
+   restaurantDialogTitle:"A digital home for your restaurant.",
+   restaurantDialogText:"A beautiful website is only the beginning. Bring your menu, reservations and online orders together in one clear experience, designed around your venue.",
+   restaurantVisual1:"A memorable first impression",
+   restaurantVisual2:"A menu that makes choosing easy",
+   restaurantVisual3:"A smoother path to an order",
+   restaurantFeature1Title:"Your brand, properly presented",
+   restaurantFeature1Text:"A fast, responsive website that reflects the character of your place and works beautifully on mobile.",
+   restaurantFeature2Title:"Menu and ordering in one place",
+   restaurantFeature2Text:"Clear menus, direct online orders and useful integrations — without sending guests through unnecessary steps.",
+   restaurantFeature3Title:"Built around your operation",
+   restaurantFeature3Text:"From a simple restaurant website to a custom platform, the scope follows the way your team works.",
+   restaurantDialogFootnote:"See what a dedicated restaurant solution can include.",
+   restaurantDialogCta:"Explore restaurant services ↗"
   },
   pl: {
    restaurantEyebrow:"NOWA USŁUGA · JUŻ WKRÓTCE",
@@ -34,10 +49,41 @@ const menu=document.querySelector(".hamb"),nav=document.querySelector("nav");men
    restaurantText:"Przygotowujemy ofertę dla gastronomii — od dopracowanych stron i cyfrowych kart menu po systemy zamówień online oraz dedykowane platformy dopasowane do sposobu działania lokalu.",
    restaurantTag1:"Strony restauracji", restaurantTag2:"Zamówienia online",
    restaurantTag3:"Dedykowane systemy", restaurantStatus:"NOWA USŁUGA REVENUE STUDIO",
-   restaurantComing:"JUŻ WKRÓTCE"
+   restaurantComing:"JUŻ WKRÓTCE",
+   restaurantExpand:"Poznaj ofertę",
+   restaurantDialogEyebrow:"ZOBACZ WIĘCEJ",
+   restaurantDialogTitle:"Cyfrowa wizytówka Twojej restauracji.",
+   restaurantDialogText:"Dobra strona to dopiero początek. Połącz menu, rezerwacje i zamówienia online w jednym przejrzystym doświadczeniu, zaprojektowanym wokół Twojego lokalu.",
+   restaurantVisual1:"Pierwsze wrażenie, które zostaje",
+   restaurantVisual2:"Menu, w którym łatwo wybrać",
+   restaurantVisual3:"Prostsza droga do zamówienia",
+   restaurantFeature1Title:"Twoja marka pokazana właściwie",
+   restaurantFeature1Text:"Szybka, responsywna strona, która oddaje charakter lokalu i świetnie działa na telefonach.",
+   restaurantFeature2Title:"Menu i zamówienia w jednym miejscu",
+   restaurantFeature2Text:"Czytelne menu, bezpośrednie zamówienia online i przydatne integracje — bez zbędnych kroków dla gości.",
+   restaurantFeature3Title:"Rozwiązanie dopasowane do lokalu",
+   restaurantFeature3Text:"Od prostej strony restauracji po dedykowaną platformę — zakres dopasowujemy do sposobu pracy zespołu.",
+   restaurantDialogFootnote:"Zobacz, co może zawierać dedykowane rozwiązanie dla restauracji.",
+   restaurantDialogCta:"Zobacz ofertę dla restauracji ↗"
   }
  };
  Object.assign(copy.en, restaurantCopy.en);
  Object.assign(copy.pl, restaurantCopy.pl);
  setLang(document.documentElement.lang || "en", false);
+})();
+
+
+/* Restaurant service expansion dialog */
+(() => {
+ const dialog = document.getElementById("restaurant-details");
+ const openButton = document.getElementById("restaurant-details-open");
+ const closeButton = document.getElementById("restaurant-details-close");
+ if (!dialog || !openButton || !closeButton || typeof dialog.showModal !== "function") return;
+ openButton.addEventListener("click", () => {
+  if (!dialog.open) dialog.showModal();
+ });
+ closeButton.addEventListener("click", () => dialog.close());
+ dialog.addEventListener("click", event => {
+  if (event.target === dialog) dialog.close();
+ });
 })();
