@@ -87,3 +87,53 @@ const menu=document.querySelector(".hamb"),nav=document.querySelector("nav");men
   if (event.target === dialog) dialog.close();
  });
 })();
+
+const restaurantExtendedCopy={
+en:{
+restaurantDialogTitle:"More than a website. A complete digital presence.",
+restaurantDialogText:"We bring strategy, design and technology together to create a digital experience that helps guests discover your restaurant, choose what they love and come back again.",
+restaurantVisual1:"A website that makes people want to visit",restaurantVisual2:"A clear, appetite-led digital menu",restaurantVisual3:"A simple path from browsing to ordering",
+restaurantCoreLabel:"THE CORE SERVICE",restaurantCoreTitle:"Everything your restaurant website needs.",restaurantCoreText:"A considered, reliable foundation — designed and delivered by the people who will stay close to the project.",
+restaurantFeature1Title:"Brand-led website design",restaurantFeature1Text:"A bespoke, responsive website that reflects the atmosphere of your venue, presents your offer clearly and turns visits into enquiries, bookings or orders.",
+restaurantFeature2Title:"Menu, bookings & ordering",restaurantFeature2Text:"Digital menus, table reservations, online ordering and useful integrations — connected in a natural, guest-friendly journey.",
+restaurantFeature3Title:"Technical delivery that lasts",restaurantFeature3Text:"Performance, accessibility, search foundations, analytics, security and a manageable content setup, built around your day-to-day operation.",
+restaurantTeamEyebrow:"ONE TEAM, WORKING TOGETHER",restaurantTeamTitle:"A committed team behind every detail.",restaurantTeamText:"You get the combined attention of the whole Revenue Studio team — from the first conversation and planning to design, development, quality checks and launch. We stay involved, communicate directly and take shared responsibility for the result.",
+restaurantTeamPoint1:"Strategy & project coordination",restaurantTeamPoint2:"Design, content structure & development",restaurantTeamPoint3:"Testing, launch & handover",
+restaurantOptionalTag:"OPTIONAL · IF YOU WANT TO GO FURTHER",restaurantOptionalTitle:"We can help you grow beyond the launch.",restaurantOptionalText:"If you prefer a broader partnership, we can extend the project with coordinated promotion and ongoing support. These services are optional and can be added to the website project only when they make sense for you.",
+restaurantOptional1Title:"Promotion & visibility",restaurantOptional1Text:"SEO foundations, Google Business Profile, campaign planning and help reaching more local guests.",
+restaurantOptional2Title:"Social media presence",restaurantOptional2Text:"Social channel setup, content direction, visual consistency and support with publishing plans.",
+restaurantOptional3Title:"Ongoing care & development",restaurantOptional3Text:"Updates, maintenance, analytics reviews, improvements and a team to turn to after launch.",
+restaurantOptionalNote:"No bundled extras or pressure — we shape the scope together around your goals and budget.",
+restaurantDialogFootnote:"Tell us about your restaurant and what you would like to achieve.",restaurantDialogCta:"Explore restaurant services ↗"
+},
+pl:{
+restaurantDialogTitle:"Nie tylko strona. Kompleksowa obecność Twojej restauracji w sieci.",
+restaurantDialogText:"Łączymy strategię, projektowanie i technologię, aby stworzyć doświadczenie, dzięki któremu goście odkryją Twój lokal, łatwo wybiorą to, na co mają ochotę, i chętnie wrócą.",
+restaurantVisual1:"Strona, która zachęca do odwiedzin",restaurantVisual2:"Czytelne menu, które pobudza apetyt",restaurantVisual3:"Prosta droga od przeglądania do zamówienia",
+restaurantCoreLabel:"PODSTAWA WSPÓŁPRACY",restaurantCoreTitle:"Wszystko, czego potrzebuje strona restauracji.",restaurantCoreText:"Przemyślana i solidna podstawa — zaprojektowana oraz wdrożona przez osoby, które pozostają blisko projektu.",
+restaurantFeature1Title:"Projekt strony dopasowany do marki",restaurantFeature1Text:"Indywidualna, responsywna strona oddająca charakter lokalu, czytelnie prezentująca ofertę i zamieniająca odwiedziny w zapytania, rezerwacje lub zamówienia.",
+restaurantFeature2Title:"Menu, rezerwacje i zamówienia",restaurantFeature2Text:"Cyfrowe menu, rezerwacje stolików, zamówienia online i przydatne integracje — połączone w naturalną, wygodną ścieżkę dla gości.",
+restaurantFeature3Title:"Technologia na dłużej",restaurantFeature3Text:"Wydajność, dostępność, podstawy SEO, analityka, bezpieczeństwo i wygodne zarządzanie treścią — dopasowane do codziennego działania lokalu.",
+restaurantTeamEyebrow:"JEDEN ZESPÓŁ, WSPÓLNE DZIAŁANIE",restaurantTeamTitle:"Za każdym detalem stoi zaangażowany zespół.",restaurantTeamText:"Otrzymujesz wspólne zaangażowanie całego zespołu Revenue Studio — od pierwszej rozmowy i planowania, przez projekt i development, po kontrolę jakości oraz uruchomienie strony. Jesteśmy w stałym kontakcie i wspólnie odpowiadamy za efekt.",
+restaurantTeamPoint1:"Strategia i koordynacja projektu",restaurantTeamPoint2:"Projekt, struktura treści i development",restaurantTeamPoint3:"Testy, uruchomienie i przekazanie strony",
+restaurantOptionalTag:"OPCJONALNIE · JEŚLI CHCESZ ROZWINĄĆ WSPÓŁPRACĘ",restaurantOptionalTitle:"Możemy pomóc Ci także po uruchomieniu strony.",restaurantOptionalText:"Jeśli zależy Ci na szerszym wsparciu, możemy rozszerzyć projekt o skoordynowaną promocję i dalszą opiekę. To usługi dodatkowe — dołączamy je tylko wtedy, gdy rzeczywiście ich potrzebujesz.",
+restaurantOptional1Title:"Promocja i widoczność",restaurantOptional1Text:"Podstawy SEO, wizytówka Google, planowanie kampanii i działania pomagające dotrzeć do większej liczby lokalnych gości.",
+restaurantOptional2Title:"Media społecznościowe",restaurantOptional2Text:"Konfiguracja kanałów, kierunek komunikacji, spójność wizualna i wsparcie w planowaniu publikacji.",
+restaurantOptional3Title:"Wsparcie i rozwój po starcie",restaurantOptional3Text:"Aktualizacje, utrzymanie, analiza danych, usprawnienia i zespół, do którego możesz zwrócić się po uruchomieniu strony.",
+restaurantOptionalNote:"Bez obowiązkowych pakietów i presji — zakres wspólnie dopasujemy do Twoich celów oraz budżetu.",
+restaurantDialogFootnote:"Opowiedz nam o swoim lokalu i o tym, co chcesz osiągnąć.",restaurantDialogCta:"Zobacz ofertę dla restauracji ↗"
+}};
+Object.assign(copy.en,restaurantExtendedCopy.en);Object.assign(copy.pl,restaurantExtendedCopy.pl);setLang(document.documentElement.lang||"en",false);
+
+/* Smoothly animate both dialog opening and closing. */
+(() => {
+ const dialog=document.getElementById("restaurant-details");
+ const close=document.getElementById("restaurant-details-close");
+ if(!dialog||!close)return;
+ let closing=false;
+ const finishClose=()=>{if(dialog.open)dialog.close();dialog.classList.remove("is-closing");closing=false;};
+ close.addEventListener("click",()=>{if(closing||!dialog.open)return;closing=true;dialog.classList.add("is-closing");window.setTimeout(finishClose,380);});
+ dialog.addEventListener("click",event=>{if(event.target===dialog&&!closing){closing=true;dialog.classList.add("is-closing");window.setTimeout(finishClose,380);}});
+ dialog.addEventListener("cancel",event=>{event.preventDefault();if(!closing){closing=true;dialog.classList.add("is-closing");window.setTimeout(finishClose,380);}});
+ dialog.addEventListener("close",()=>{dialog.classList.remove("is-closing");closing=false;});
+})();
