@@ -32,6 +32,7 @@
       <span data-t="restaurantTag2">Online ordering</span>
       <span data-t="restaurantTag3">Custom platforms</span>
     </div>
+    <button class="service-upcoming__expand" type="button" data-open-restaurant aria-haspopup="dialog" aria-controls="restaurant-showcase" data-t="restaurantExpand">Explore the service ↗</button>
   </div>
   <div class="service-upcoming__status">
     <span class="service-upcoming__icon" aria-hidden="true">✦</span>
@@ -40,6 +41,37 @@
   </div>
 </div>
 </section>
+<div class="restaurant-showcase" id="restaurant-showcase" hidden aria-hidden="true">
+  <div class="restaurant-showcase__backdrop" data-close-restaurant></div>
+  <section class="restaurant-showcase__panel" role="dialog" aria-modal="true" aria-labelledby="restaurant-showcase-title" tabindex="-1">
+    <div class="restaurant-showcase__top">
+      <span class="restaurant-showcase__kicker" data-t="restaurantModalEyebrow">A CLOSER LOOK · RESTAURANT DIGITAL EXPERIENCES</span>
+      <button class="restaurant-showcase__close" type="button" data-close-restaurant aria-label="Close details" data-t="restaurantClose">Close ×</button>
+    </div>
+    <div class="restaurant-showcase__intro">
+      <div>
+        <h2 id="restaurant-showcase-title" data-t="restaurantModalTitle">A digital home for your restaurant.</h2>
+        <p data-t="restaurantModalText">Beautifully presented menus, effortless ordering and a clear path from first impression to a table booking or an online order.</p>
+      </div>
+      <div class="restaurant-showcase__stamp"><span>REVENUE</span><strong>STUDIO</strong><small>HOSPITALITY WEB EXPERIENCES</small></div>
+    </div>
+    <div class="restaurant-showcase__gallery" aria-label="Restaurant website design previews">
+      <figure class="restaurant-showcase__tile restaurant-showcase__tile--home"><div role="img" aria-label="Restaurant homepage displayed on desktop"></div><figcaption data-t="restaurantGallery1">A memorable first impression</figcaption></figure>
+      <figure class="restaurant-showcase__tile restaurant-showcase__tile--menu"><div role="img" aria-label="Digital restaurant menu with food photography"></div><figcaption data-t="restaurantGallery2">A menu people want to explore</figcaption></figure>
+      <figure class="restaurant-showcase__tile restaurant-showcase__tile--order"><div role="img" aria-label="Online food ordering interface on desktop and mobile"></div><figcaption data-t="restaurantGallery3">Ordering made simple</figcaption></figure>
+      <figure class="restaurant-showcase__tile restaurant-showcase__tile--cafe"><div role="img" aria-label="Cafe website with opening hours and location"></div><figcaption data-t="restaurantGallery4">Everything guests need to visit</figcaption></figure>
+    </div>
+    <div class="restaurant-showcase__bottom">
+      <ul class="restaurant-showcase__features">
+        <li data-t="restaurantFeature1">Custom design that reflects the character of the venue</li>
+        <li data-t="restaurantFeature2">Responsive menu, dish photography and clear information</li>
+        <li data-t="restaurantFeature3">Online ordering, pickup and delivery options when needed</li>
+        <li data-t="restaurantFeature4">Reservations, location, opening hours and contact in one place</li>
+      </ul>
+      <a class="btn restaurant-showcase__link" href="/revenue-studio/restaurants/" data-t="restaurantLink">Explore the full restaurant offer →</a>
+    </div>
+  </section>
+</div>
 <section class="wrap product"><div><label class="eyebrow" data-t="productEyebrow">BUILT IN-HOUSE</label><h2>WooCommerce<br><em>Revenue Guard.</em></h2><p class="intro" data-t="productText">We're also developing our own tools. Revenue Guard is our initiative focused on helping WooCommerce stores keep an eye on important technical health signals and configuration issues.</p><small class="roadmap" data-t="productStatus">IN DEVELOPMENT</small></div><div class="product-mark"><b>R</b><span>REVENUE <strong>GUARD</strong><small>FOR WOOCOMMERCE</small></span></div></section>
 
 <section class="wrap product product--tool" id="opportunity-hunter"><div class="tool-copy"><label class="eyebrow" data-t="ohEyebrow">UPCOMING TOOL · OPPORTUNITY DISCOVERY</label><h2>Opportunity<br><em>Hunter.</em></h2><p class="intro" data-t="ohText">A focused opportunity discovery tool that scans selected sources, filters relevant projects and short tasks, and turns scattered listings into a clearer action list.</p><ul class="tool-points"><li data-t="ohPoint1">Multi-source discovery and consolidated results</li><li data-t="ohPoint2">Relevance classification for freelance leads and quick tasks</li><li data-t="ohPoint3">Reports designed to help you decide what to pursue next</li></ul><small class="roadmap" data-t="toolStatus">IN DEVELOPMENT · JOIN THE UPDATES LIST</small><div class="tool-cta"><a class="btn" href="https://d05b8f5b.sibforms.com/serve/MUIFALTFjSW-xGxGjvirTYDrAEHb3FA-X-EV1INK5tAOJSz7ryA4l4hfzn8ynqijJG2dOrHPLumKUoSGLWgEXWuE4Ld2ZHUW4e4Ka1xm_5rCoytXRHZ0d42RqAFKbtwUIREtF72CmyHhWPjeLG_Gbb7dcqa_88lAhibv3cAx_6g3ImcXQ8RhVTg3yEcJWwucqmWxkQP-NgkEAT3oKA==" target="_blank" rel="noopener noreferrer" data-t="toolCta">Get product updates ↗</a></div></div><div class="tool-visual" aria-hidden="true"><div class="tool-window"><div class="tool-window-head"><span></span><span></span><span></span><b>OPPORTUNITY / FEED</b></div><div class="tool-stat"><small>DISCOVERY ENGINE</small><strong>SCAN <i>→</i> FILTER <i>→</i> ACT</strong></div><div class="tool-row"><b>⌕</b><div><strong>Source scanning</strong><small>Selected sources, one workflow</small></div><em>01</em></div><div class="tool-row"><b>✳</b><div><strong>Smart filtering</strong><small>Relevant projects and quick tasks</small></div><em>02</em></div><div class="tool-row"><b>↗</b><div><strong>Actionable report</strong><small>Opportunities ready to review</small></div><em>03</em></div><div class="tool-window-foot"><span>LESS NOISE</span><span>MORE FOCUS</span></div></div></div></section>
