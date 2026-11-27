@@ -26,7 +26,17 @@ const menu=document.querySelector(".hamb"),nav=document.querySelector("nav");men
    restaurantText:"We're preparing a dedicated service for restaurants — from polished websites and digital menus to online ordering and custom platforms tailored to the way each venue works.",
    restaurantTag1:"Restaurant websites", restaurantTag2:"Online ordering",
    restaurantTag3:"Custom platforms", restaurantStatus:"A NEW REVENUE STUDIO SERVICE",
-   restaurantComing:"COMING SOON"
+   restaurantComing:"COMING SOON", restaurantExpand:"Explore the service ↗",
+   restaurantModalEyebrow:"A CLOSER LOOK · RESTAURANT DIGITAL EXPERIENCES",
+   restaurantModalTitle:"A digital home for your restaurant.",
+   restaurantModalText:"Beautifully presented menus, effortless ordering and a clear path from first impression to a table booking or an online order.",
+   restaurantGallery1:"A memorable first impression",restaurantGallery2:"A menu people want to explore",
+   restaurantGallery3:"Ordering made simple",restaurantGallery4:"Everything guests need to visit",
+   restaurantFeature1:"Custom design that reflects the character of the venue",
+   restaurantFeature2:"Responsive menu, dish photography and clear information",
+   restaurantFeature3:"Online ordering, pickup and delivery options when needed",
+   restaurantFeature4:"Reservations, location, opening hours and contact in one place",
+   restaurantLink:"Explore the full restaurant offer →",restaurantClose:"Close ×"
   },
   pl: {
    restaurantEyebrow:"NOWA USŁUGA · JUŻ WKRÓTCE",
@@ -34,10 +44,59 @@ const menu=document.querySelector(".hamb"),nav=document.querySelector("nav");men
    restaurantText:"Przygotowujemy ofertę dla gastronomii — od dopracowanych stron i cyfrowych kart menu po systemy zamówień online oraz dedykowane platformy dopasowane do sposobu działania lokalu.",
    restaurantTag1:"Strony restauracji", restaurantTag2:"Zamówienia online",
    restaurantTag3:"Dedykowane systemy", restaurantStatus:"NOWA USŁUGA REVENUE STUDIO",
-   restaurantComing:"JUŻ WKRÓTCE"
+   restaurantComing:"JUŻ WKRÓTCE", restaurantExpand:"Rozwiń szczegóły usługi ↗",
+   restaurantModalEyebrow:"ZOBACZ WIĘCEJ · ROZWIĄZANIA CYFROWE DLA RESTAURACJI",
+   restaurantModalTitle:"Własne miejsce restauracji w internecie.",
+   restaurantModalText:"Apetytne menu, wygodne zamawianie i prosta droga od pierwszego wrażenia do rezerwacji stolika lub zamówienia online.",
+   restaurantGallery1:"Pierwsze wrażenie, które zostaje",restaurantGallery2:"Menu, które chce się przeglądać",
+   restaurantGallery3:"Zamawianie bez zbędnych kroków",restaurantGallery4:"Wszystko, czego gość potrzebuje",
+   restaurantFeature1:"Indywidualny projekt oddający charakter lokalu",
+   restaurantFeature2:"Responsywne menu, zdjęcia dań i czytelne informacje",
+   restaurantFeature3:"Zamówienia online, odbiór i dostawa — jeśli są potrzebne",
+   restaurantFeature4:"Rezerwacje, lokalizacja, godziny i kontakt w jednym miejscu",
+   restaurantLink:"Zobacz pełną ofertę dla restauracji →",restaurantClose:"Zamknij ×"
   }
  };
  Object.assign(copy.en, restaurantCopy.en);
  Object.assign(copy.pl, restaurantCopy.pl);
  setLang(document.documentElement.lang || "en", false);
+})();
+
+
+/* Accessible restaurant service expansion */
+(() => {
+ const modal=document.getElementById("restaurant-showcase");
+ const opener=document.querySelector("[data-open-restaurant]");
+ if(!modal||!opener)return;
+ const panel=modal.querySelector(".restaurant-showcase__panel");
+ const closeButtons=modal.querySelectorAll("[data-close-restaurant]");
+ let previousFocus=null;
+ const close=()=>{
+  if(modal.hidden)return;
+  modal.classList.remove("is-open");
+  modal.setAttribute("aria-hidden","true");
+  document.body.classList.remove("restaurant-modal-open");
+  window.setTimeout(()=>{modal.hidden=true;if(previousFocus)previousFocus.focus();},300);
+ };
+ opener.addEventListener("click",()=>{
+  previousFocus=document.activeElement;
+  modal.hidden=false;
+  modal.setAttribute("aria-hidden","false");
+  document.body.classList.add("restaurant-modal-open");
+  window.requestAnimationFrame(()=>modal.classList.add("is-open"));
+  const closeButton=modal.querySelector(".restaurant-showcase__close");
+  if(closeButton)closeButton.focus();
+ });
+ closeButtons.forEach(button=>button.addEventListener("click",close));
+ document.addEventListener("keydown",event=>{
+  if(modal.hidden)return;
+  if(event.key==="Escape"){event.preventDefault();close();return;}
+  if(event.key==="Tab"){
+   const focusable=Array.from(modal.querySelectorAll('a[href],button:not([disabled]),[tabindex]:not([tabindex="-1"])')).filter(el=>!el.hasAttribute("hidden"));
+   if(!focusable.length)return;
+   const first=focusable[0],last=focusable[focusable.length-1];
+   if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+   else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+  }
+ });
 })();
