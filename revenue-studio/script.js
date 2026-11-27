@@ -82,9 +82,9 @@ const menu=document.querySelector(".hamb"),nav=document.querySelector("nav");men
  openButton.addEventListener("click", () => {
   if (!dialog.open) dialog.showModal();
  });
- closeButton.addEventListener("click", () => dialog.close());
+
  dialog.addEventListener("click", event => {
-  if (event.target === dialog) dialog.close();
+  if (event.target === dialog) return;
  });
 })();
 
